@@ -83,11 +83,6 @@ da finner du hvert eneste sted som må fylles inn.
 - [ ] **Sted og område.** JSON-LD `address` og `areaServed` i `index.html`.
       Skal KontorKlar profileres lokalt, bytt `areaServed` fra «Norge» til
       kommunen/regionen – det gir langt bedre lokale søketreff.
-- [ ] **Lenker til Facebook og Instagram.** Markupen ligger ferdig, men
-      utkommentert, rett over personvernlenken i footeren. Fjern kommentaren og
-      sett inn adressene, og legg de samme to inn i JSON-LD som `"sameAs"`.
-      Trude har opprettet profilene, men lenkene hun sendte gikk til
-      facebook.com og instagram.com sine forsider.
 - [ ] **Bytt ut FormSubmit.** Trude vil ha behandling i EU/EØS før lansering.
       Beste løsning er et lite PHP-skript på hennes eget webhotell – da er ingen
       tredjepart involvert i det hele tatt, og hele USA-avsnittet forsvinner ut
