@@ -147,6 +147,13 @@ FTP til Domeneshop med FileZilla. Last opp innholdet i mappa til webroten.
 **Viktig:** endres `css/style.css` eller `js/main.js`, må de lastes opp sammen med
 HTML-filene. Lastes bare HTML-en opp, virker den nye siden halvveis.
 
+**Bump versjonsnummeret ved hver endring i CSS eller JS.** Lenkene står som
+`css/style.css?v=2` og `js/main.js?v=2` i alle tre HTML-filene. Uten dette kan
+en besøkende få ny HTML sammen med gammel CSS fra nettleserens mellomlager, og
+siden ser ødelagt ut – innholdet klistrer seg til venstre kant og arkene i
+hero-en forsvinner. GitHub Pages og Domeneshop setter begge ti minutters
+mellomlagring på filene, så det er ikke nok å bare laste opp på nytt.
+
 Git brukes til versjonskontroll, ikke deploy.
 
 ---
