@@ -62,6 +62,9 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  /* clip lager ikke en rulle-container slik hidden gjør, så
+     position: sticky fortsetter å virke. Linja over er fallback. */
+  overflow-x: clip;
 }
 
 h1, h2, h3 {
@@ -237,7 +240,17 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(30px, 5vw, 64px);
-  align-items: center;
+  align-items: start;
+}
+
+/* Teksten får ekstra luft under seg, slik at scenen til høyre har noe
+   å stå festet gjennom. Det er denne strekningen bunkene sorterer seg
+   over – uten den rakk man ikke å se dem legge seg. */
+.hero__inner { padding-bottom: clamp(0px, 15vh, 180px); }
+
+.hero__scene {
+  position: sticky;
+  top: calc(var(--header-h) + 34px);
 }
 
 .hero__eyebrow {
@@ -907,7 +920,11 @@ ul { list-style: none; }
   /* Haugen legger seg under teksten og får mindre plass. Headrommet
      over bunkene trengs bare til spredningen på desktop, så her
      trekkes den opp – den øvre delen av flata er likevel tom. */
-  .haug { max-width: 380px; margin: -58px auto 0; }
+  .haug { max-width: 380px; margin: -46px auto 0; }
+  /* På mobil ligger scenen i flyten under teksten, og haugen sorterer
+     seg etter hvert som den kommer opp i synsfeltet i stedet. */
+  .hero__scene { position: static; }
+  .hero__inner { padding-bottom: 0; }
 
   .brev { grid-template-columns: 1fr; }
   .om { grid-template-columns: 1fr; }

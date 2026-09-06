@@ -27,9 +27,12 @@
      slik at spredningen skalerer med elementet. */
 
   var haug = document.getElementById("haug");
+  var heroTekst = document.querySelector(".hero__inner");
   var ark = haug ? Array.prototype.slice.call(haug.querySelectorAll(".ark")) : [];
   var sorterer = ark.length > 0 && !reduceMotion;
 
+  // dx og dy er differansen mellom spredt og sortert posisjon, i prosent
+  // av flatas bredde og høyde – samme enheter som left og top i markupen.
   var haugData = ark.map(function (el) {
     return {
       el: el,
@@ -39,22 +42,38 @@
     };
   });
 
+  function klem(v) {
+    return Math.min(1, Math.max(0, v));
+  }
+
   function haugStrekning() {
-    // Ferdig sortert omtrent når hero-en er rullet forbi
-    return Math.max(240, window.innerHeight * 0.55);
+    // Så langt scenen står festet mens teksten ved siden ruller forbi.
+    // Sorteringen følger den strekningen, slik at bunkene rekker å legge
+    // seg mens haugen fortsatt er i bildet.
+    var reise = heroTekst ? heroTekst.offsetHeight - haug.offsetHeight : 0;
+    return Math.max(220, Math.min(reise, window.innerHeight * 0.6));
+  }
+
+  function fremdrift() {
+    if (window.innerWidth < 900) {
+      // På mobil ligger haugen under første skjermbilde. Da kan ikke
+      // skrollposisjonen brukes direkte – i stedet sorterer den seg
+      // etter hvert som den kommer opp i synsfeltet.
+      var boks = haug.getBoundingClientRect();
+      var vh = window.innerHeight;
+      return klem((vh - boks.top) / (vh * 0.55));
+    }
+    // På desktop er haugen i syne fra start, og står festet mens man ruller.
+    return klem(window.scrollY / haugStrekning());
   }
 
   function tegnHaug() {
     if (!sorterer) return;
 
-    // På smale skjermer får haugen ligge ferdig sortert – der er den
-    // et lite bilde under teksten, ikke noe man ruller gjennom.
-    var p = window.innerWidth < 900
-      ? 1
-      : Math.min(1, Math.max(0, window.scrollY / haugStrekning()));
-
+    var p = fremdrift();
     var igjen = 1 - p;
     var bredde = haug.offsetWidth;
+    var hoyde = haug.offsetHeight;
 
     for (var i = 0; i < haugData.length; i++) {
       var d = haugData[i];
@@ -63,7 +82,7 @@
       } else {
         d.el.style.transform =
           "translate(" + (d.dx * igjen * bredde) / 100 + "px," +
-          (d.dy * igjen * bredde) / 100 + "px) rotate(" + d.r * igjen + "deg)";
+          (d.dy * igjen * hoyde) / 100 + "px) rotate(" + d.r * igjen + "deg)";
       }
     }
 
