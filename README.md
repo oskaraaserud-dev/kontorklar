@@ -68,21 +68,17 @@ denne sidas eget er:
 
 ## Sjekkliste før lansering
 
-Alt som mangler er merket `TODO` i koden. Søk etter `TODO` i alle filer –
-da finner du hvert eneste sted som må fylles inn.
+Kontaktopplysningene er på plass. Foretaket er registrert som
+**KontorKlar Øiesvold** (enkeltpersonforetak, org.nr. 938 426 961, Lunner).
+Trude ønsket ikke postadresse i personvernerklæringen – foretaksnavn, org.nr.,
+e-post og telefon identifiserer behandlingsansvarlig, og det er tilstrekkelig
+etter personvernforordningen artikkel 13.
 
-- [ ] **E-postadresse.** Byttes fire steder i `index.html` (skjemaets `action`,
-      `.contact-list`, `.form-note`, JSON-LD) og to steder i `personvern.html`.
+To ting gjenstår:
+
 - [ ] **Aktiver FormSubmit.** Send én testhenvendelse fra den publiserte siden.
       FormSubmit sender da en aktiveringsmail til adressen over – den må bekreftes,
       ellers kommer ingen henvendelser fram.
-- [ ] **Telefonnummer.** `index.html` (`.contact-list` + JSON-LD `telephone`) og
-      `personvern.html`.
-- [ ] **Org.nr. og foretaksnavn.** Footeren på alle tre sidene, og punkt 1 i
-      `personvern.html`.
-- [ ] **Sted og område.** JSON-LD `address` og `areaServed` i `index.html`.
-      Skal KontorKlar profileres lokalt, bytt `areaServed` fra «Norge» til
-      kommunen/regionen – det gir langt bedre lokale søketreff.
 - [ ] **Bytt ut FormSubmit.** Trude vil ha behandling i EU/EØS før lansering.
       Beste løsning er et lite PHP-skript på hennes eget webhotell – da er ingen
       tredjepart involvert i det hele tatt, og hele USA-avsnittet forsvinner ut
@@ -92,8 +88,6 @@ da finner du hvert eneste sted som må fylles inn.
       Det er to ulike produkter. Faller PHP bort, er Tally (belgisk, EU-hostet)
       eller Forminit (AWS Irland, med databehandleravtale) nærmeste alternativ –
       begge må da føres opp som databehandler i punkt 5.
-- [ ] **Dato i personvernerklæringen** (`.legal-updated`).
-- [ ] **Datoer i `sitemap.xml`** (`lastmod`).
 - [ ] Kontroller prisene mot Trudes e-post en siste gang før lansering. Dette
       er det eneste bindende innholdet på siden.
 
