@@ -618,31 +618,19 @@ ul { list-style: none; }
 
 .om {
   display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-columns: 0.88fr 1.12fr;
   gap: clamp(26px, 4vw, 56px);
   align-items: start;
 }
 
 .om__figur { margin: 0; }
-.om__foto,
-.om__plassholder {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 3px;
-}
-.om__foto { object-fit: cover; }
 
-/* Midlertidig monogram til portrettet foreligger */
-.om__plassholder {
-  background: var(--bg-alt);
-  border: 1px solid var(--rule);
-  display: grid;
-  place-items: center;
-}
-.om__plassholder span {
-  font-family: var(--font-head);
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  color: var(--green);
+/* Ingen fast aspect-ratio her. Bildet beholder sitt eget format, saa et
+   nytt portrett kan byttes inn uten aa bli beskaaret eller strukket. */
+.om__foto {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
 }
 
 .om__tekst p + p { margin-top: 15px; }

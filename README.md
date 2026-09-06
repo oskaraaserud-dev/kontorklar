@@ -115,12 +115,13 @@ delt i tre bruksklare varianter med gjennomsiktig bakgrunn:
 | `bilder/logo-lys.png` | Footeren, som står på merkenavy. Alt blekk gjort hvitt |
 | `bilder/logo-merke.png` | Merket alene, kvadratisk. Brukt på `takk.html` |
 | `bilder/og-image.png` | Deling på Facebook og LinkedIn, 1200 × 630 |
-| `bilder/trude.jpg` | Portrettet i seksjon 06, 800 × 1000 |
+| `bilder/trude.jpg` | Portrettet i seksjon 06, 900 × 878 |
 | `favicon.png` | Fanikon, 180 × 180 |
 
-Portrettet er beskåret til 4:5 fra en nesten kvadratisk original
-(1270 × 1239) ved å ta bort 140 px i hver side. Det er **JPEG, ikke WebP** –
-det finnes ingen WebP-koder på maskinen.
+Portrettet er hele originalen, bare skalert ned – ikke beskåret. `.om__foto`
+har derfor **ingen `aspect-ratio`**; bildet beholder sitt eget format, så et
+nytt portrett kan byttes inn uten å bli strukket eller kuttet. Det er **JPEG,
+ikke WebP** – det finnes ingen WebP-koder på maskinen.
 
 Skal de lages på nytt – for eksempel hvis kunden sender en ny logofil – kjør
 `verktoy/lag-logo.ps1` fra PowerShell. Skriptet klipper ut merket og ordmerket,
