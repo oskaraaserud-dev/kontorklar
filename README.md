@@ -26,14 +26,34 @@ kontorklar/
 
 ### Seksjoner på forsiden
 
-| Anker | Innhold |
-|---|---|
-| `#tjenester` | Fire tjenestekort: kontorhjelp, brev/offentlig, prosjektstøtte, lederstøtte |
-| `#offentlig` | Mørkt bånd – hjelp med brev og skjemaer fra det offentlige, i fire steg |
-| `#slik` | Tre kjøpsmodeller: ved behov, fast avtale, prosjekt/periode |
-| `#hvem` | Målgruppene – fra snekkeren til styrerommet |
-| `#om` | Trude Øiesvold, erfaring og verdier |
-| `#kontakt` | FormSubmit-skjema og kontaktopplysninger |
+Siden er satt opp som et dokument: hver seksjon har nummer og navn i en
+venstremarg som blir stående mens innholdet ruller forbi.
+
+| | Anker | Innhold |
+|---|---|---|
+| 01 | `#tjenester` | Fire oppføringer i et register, skilt av hårfine linjer |
+| 02 | `#offentlig` | Brevet fra kommunen, med fire notater i margen |
+| 03 | `#slik` | Tre kjøpsmodeller som spalter i et vilkårsoppsett |
+| 04 | `#hvem` | Målgruppene som én løpende linje |
+| 05 | `#om` | Trude Øiesvold, erfaring og verdier |
+| 06 | `#kontakt` | FormSubmit-skjema og kontaktopplysninger |
+
+### Hva som er KontorKlars eget
+
+De andre kundesidene deler header, skjema, tilgjengelighet og
+mobilmeny – det er løste problemer, og de skal være like. Det som er
+denne sidas eget er:
+
+- **Dokumentlayouten.** Nummerert venstremarg, hårfine linjer, ingen kort
+  med skygge. Gir siden et arkiv-preg som passer en administrativ tjeneste.
+- **Haugen i hero-en.** Tretten ark ligger ferdig sortert i tre bunker i
+  HTML-en. `main.js` sprer dem ut ved sidelast og lar dem falle på plass
+  igjen mens man ruller – rot som blir til orden, som er hele
+  salgsargumentet. Uten JS, med redusert bevegelse, eller på skjermer
+  under 900 px ligger de bare sortert.
+- **Brevet.** Seksjon 02 viser et faktisk brev med en frist som er ringet
+  rundt, og fire nummererte notater ved siden. Tallene i brevet svarer til
+  notatene.
 
 ---
 
@@ -134,9 +154,13 @@ Git brukes til versjonskontroll, ikke deploy.
 ## Testing før levering
 
 1. Åpne `index.html` lokalt.
-2. Skru av JavaScript. Alt innhold skal fortsatt vises, og skjemaet skal virke.
-   Skjul-tilstanden for `.reveal` henger på klassen `js-ready`, som `main.js`
-   setter selv – uteblir scriptet, vises alt i stedet for å bli usynlig.
+2. Test uten JavaScript. Nettleserflagget `--disable-javascript` virker ikke i
+   headless Edge, så lag heller en kopi uten script-taggen:
+   `sed 's|<script src="js/main.js"></script>||' index.html > _test.html`
+   Da skal alt innhold vises, skjemaet virke, og arkene i hero-en ligge
+   ferdig sortert. Skjul-tilstanden for `.reveal` henger på klassen
+   `js-ready`, som `main.js` setter selv – uteblir scriptet, vises alt i
+   stedet for å bli usynlig. Slett `_test.html` etterpå.
 3. Tab gjennom siden. «Hopp til hovedinnhold» skal komme først, og alt som kan
    fokuseres skal ha synlig omriss.
 4. Sjekk mobilvisningen i DevTools eller på telefon. I headless nettleser styrer

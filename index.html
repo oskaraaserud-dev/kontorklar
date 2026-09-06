@@ -116,7 +116,7 @@
 
 <!-- ======== HERO ======== -->
 <section class="hero">
-  <div class="container">
+  <div class="hero__grid">
     <div class="hero__inner">
       <p class="hero__eyebrow">Fleksibel kontorhjelp – uten å ansette noen</p>
       <h1>Du gjør jobben.<br>Jeg tar kontorjobben.</h1>
@@ -137,356 +137,383 @@
         <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Taushetsplikt og diskresjon</li>
       </ul>
     </div>
+
+    <!-- Haugen som sorterer seg. Arkene står ferdig sortert her; main.js
+         sprer dem ut ved sidelast og lar dem falle på plass mens man
+         ruller gjennom hero-en. Uten JS ligger de bare sortert med én gang. -->
+    <div class="haug" id="haug" aria-hidden="true">
+        <span class="ark ark--slipp" style="left:-0.6%;top:67.0%;width:25%;height:9%" data-dx="-14" data-dy="-22" data-r="-16"></span>
+        <span class="ark ark--slipp" style="left:0.6%;top:65.8%;width:25%;height:9%" data-dx="9" data-dy="-38" data-r="21"></span>
+        <span class="ark ark--slipp" style="left:-0.6%;top:64.6%;width:25%;height:9%" data-dx="-20" data-dy="-6" data-r="12"></span>
+        <span class="ark ark--slipp" style="left:0.6%;top:63.4%;width:25%;height:9%" data-dx="5" data-dy="-30" data-r="-23"></span>
+        <span class="ark ark--slipp ark--topp" style="left:-0.6%;top:62.2%;width:25%;height:9%" data-dx="-8" data-dy="-14" data-r="17"><span class="ark__linjer"></span></span>
+        <span class="ark ark--konvolutt" style="left:30.4%;top:32.0%;width:34%;height:44%" data-dx="17" data-dy="-26" data-r="18"></span>
+        <span class="ark ark--konvolutt" style="left:31.6%;top:31.0%;width:34%;height:44%" data-dx="-13" data-dy="-14" data-r="-20"></span>
+        <span class="ark" style="left:30.4%;top:30.0%;width:34%;height:44%" data-dx="21" data-dy="-6" data-r="11"></span>
+        <span class="ark ark--topp" style="left:31.6%;top:29.0%;width:34%;height:44%" data-dx="-6" data-dy="-32" data-r="-9"><span class="ark__hode"></span><span class="ark__linjer"></span></span>
+        <span class="ark" style="left:70.4%;top:37.0%;width:27%;height:39%" data-dx="-18" data-dy="-20" data-r="22"></span>
+        <span class="ark" style="left:71.6%;top:36.0%;width:27%;height:39%" data-dx="12" data-dy="-7" data-r="-16"></span>
+        <span class="ark" style="left:70.4%;top:35.0%;width:27%;height:39%" data-dx="-9" data-dy="-29" data-r="8"></span>
+        <span class="ark ark--topp" style="left:71.6%;top:34.0%;width:27%;height:39%" data-dx="15" data-dy="-13" data-r="-12"><span class="ark__hode"></span><span class="ark__linjer"></span></span>
+      <p class="haug__merkelapp" style="left:0%">Bilag</p>
+      <p class="haug__merkelapp" style="left:31%">Brev</p>
+      <p class="haug__merkelapp" style="left:71%">Skjema</p>
+    </div>
   </div>
 </section>
 
 <main id="innhold" tabindex="-1">
 
-  <!-- ======== TJENESTER ======== -->
-  <section id="tjenester" class="section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="section-kicker">Hva jeg hjelper med</p>
-        <h2>Papirarbeidet som aldri blir gjort</h2>
-        <p>
-          De fleste som driver noe selv kjenner det igjen: fakturaene ligger i
-          bilen, e-postene hoper seg opp, og kontorarbeidet blir gjort på kvelden
-          eller ikke i det hele tatt. Det er akkurat der jeg kommer inn.
-        </p>
+  <!-- ======== 01 TJENESTER ======== -->
+  <section id="tjenester" class="doc doc--alt">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">01</span>
+        <p class="doc__label">Tjenester</p>
       </div>
 
-      <div class="card-grid">
-
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 13.5h5l1.5 2.5h5l1.5-2.5h5M5 5h14l2 8.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4.5z"
-                    fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Kontorhjelp</h3>
+      <div class="doc__body">
+        <div class="doc__head reveal">
+          <h2>Papirarbeidet som aldri blir gjort</h2>
           <p>
-            De praktiske oppgavene som må gjøres, men som stjeler tiden din fra
-            det du egentlig lever av. Jeg tar dem løpende eller i bolker.
+            De fleste som driver noe selv kjenner det igjen: fakturaene ligger i
+            bilen, e-postene hoper seg opp, og kontorarbeidet blir gjort på
+            kvelden eller ikke i det hele tatt. Det er akkurat der jeg kommer inn.
           </p>
-          <ul class="card__list">
-            <li>E-post</li>
-            <li>Kundekontakt</li>
-            <li>Tilbud og dokumenter</li>
-            <li>Kalender og avtaler</li>
-            <li>Bestillinger</li>
-            <li>Bilag og underlag</li>
-            <li>Arkivering</li>
-          </ul>
-        </article>
+        </div>
 
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h4"
-                    fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Brev, skjemaer og offentlig kontakt</h3>
-          <p>
-            Har du fått et brev fra kommunen eller det offentlige og er usikker på
-            hva du skal gjøre? Jeg skaper oversikt, finner fristene og hjelper deg
-            gjennom saken.
-          </p>
-          <ul class="card__list">
-            <li>Frister</li>
-            <li>Dokumentasjon</li>
-            <li>Utfylling av skjemaer</li>
-            <li>Formulering av svar</li>
-            <li>Oppfølging</li>
-          </ul>
-        </article>
+        <div class="register">
+          <article class="post reveal">
+            <h3>Kontorhjelp</h3>
+            <div>
+              <p>
+                De praktiske oppgavene som må gjøres, men som stjeler tiden din
+                fra det du egentlig lever av. Jeg tar dem løpende eller i bolker.
+              </p>
+              <p class="post__stikk">
+                E-post · Kundekontakt · Tilbud og dokumenter · Kalender og
+                avtaler · Bestillinger · Bilag og underlag · Arkivering
+              </p>
+            </div>
+          </article>
 
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM4 10h16M8 3v4M16 3v4M9.5 14.5l2 2 3.5-4"
-                    fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Administrativ støtte og prosjektstøtte</h3>
-          <p>
-            Erfaren støtte når noe skal koordineres, planlegges eller
-            gjennomføres – enten det er et prosjekt, et arrangement eller en
-            travel periode med for lite folk.
-          </p>
-          <ul class="card__list">
-            <li>Møteplanlegging</li>
-            <li>Dokumentproduksjon</li>
-            <li>Presentasjoner</li>
-            <li>Referater</li>
-            <li>Arrangementer</li>
-            <li>Reiser</li>
-            <li>Frister og oppfølging</li>
-          </ul>
-        </article>
+          <article class="post reveal">
+            <h3>Brev, skjemaer og offentlig kontakt</h3>
+            <div>
+              <p>
+                Har du fått et brev fra kommunen eller det offentlige og er
+                usikker på hva du skal gjøre? Jeg skaper oversikt, finner
+                fristene og hjelper deg gjennom saken.
+              </p>
+              <p class="post__stikk">
+                Frister · Dokumentasjon · Utfylling av skjemaer · Formulering av
+                svar · Oppfølging
+              </p>
+            </div>
+          </article>
 
-        <article class="card reveal">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4.5 20a7.5 7.5 0 0 1 15 0"
-                    fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Lederstøtte</h3>
-          <p>
-            Profesjonell administrativ støtte til ledere som trenger å bruke tiden
-            sin på ledelse. Diskret, selvgående og vant til høyt tempo.
-          </p>
-          <ul class="card__list">
-            <li>Kalenderstyring</li>
-            <li>Møtekoordinering</li>
-            <li>Møteforberedelser</li>
-            <li>Reiser</li>
-            <li>Arrangementer</li>
-            <li>Løpende oppfølging</li>
-          </ul>
-        </article>
+          <article class="post reveal">
+            <h3>Administrativ støtte og prosjektstøtte</h3>
+            <div>
+              <p>
+                Erfaren støtte når noe skal koordineres, planlegges eller
+                gjennomføres – enten det er et prosjekt, et arrangement eller en
+                travel periode med for lite folk.
+              </p>
+              <p class="post__stikk">
+                Møteplanlegging · Dokumentproduksjon · Presentasjoner ·
+                Referater · Arrangementer · Reiser · Frister og oppfølging
+              </p>
+            </div>
+          </article>
 
+          <article class="post reveal">
+            <h3>Lederstøtte</h3>
+            <div>
+              <p>
+                Profesjonell administrativ støtte til ledere som trenger å bruke
+                tiden sin på ledelse. Diskret, selvgående og vant til høyt tempo.
+              </p>
+              <p class="post__stikk">
+                Kalenderstyring · Møtekoordinering · Møteforberedelser · Reiser ·
+                Arrangementer · Løpende oppfølging
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== FREMHEVET: BREV OG OFFENTLIG KONTAKT ========
-       Det mest distinkte tilbudet får egen, mørk seksjon. -->
-  <section id="offentlig" class="band">
-    <div class="container">
-      <div class="band__grid">
+  <!-- ======== 02 BREVET FRA KOMMUNEN ========
+       Det mest særegne tilbudet, vist som det faktisk ser ut: et brev med
+       en frist, og fire notater i margen som forklarer hva vi gjør med det.
+       Tallene i brevet svarer til notatene ved siden av. -->
+  <section id="offentlig" class="brev-seksjon">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">02</span>
+        <p class="doc__label">Brev og skjemaer</p>
+      </div>
 
-        <div class="reveal">
-          <p class="section-kicker" style="color:#fff">Når det offentlige tar kontakt</p>
+      <div class="doc__body">
+        <div class="doc__head reveal">
           <h2>Fått et brev du ikke vet hva du skal gjøre med?</h2>
-          <p class="band__lead">
+          <p>
             Et skjema fra kommunen, en henvendelse fra en etat, en frist du ikke
-            helt forstår. Det trenger ikke å bli liggende i haugen. Vi tar det
-            sammen, steg for steg.
+            helt forstår. Det trenger ikke å bli liggende i haugen.
           </p>
-
-          <ul class="steps">
-            <li>
-              <span class="steps__num" aria-hidden="true">1</span>
-              <span>
-                <strong>Vi skaper oversikt</strong>
-                <span class="steps__text">Hva gjelder saken, hva blir du bedt om, og hva haster?</span>
-              </span>
-            </li>
-            <li>
-              <span class="steps__num" aria-hidden="true">2</span>
-              <span>
-                <strong>Vi finner fristene</strong>
-                <span class="steps__text">Så du vet nøyaktig hva som må være gjort, og når.</span>
-              </span>
-            </li>
-            <li>
-              <span class="steps__num" aria-hidden="true">3</span>
-              <span>
-                <strong>Vi samler dokumentasjonen</strong>
-                <span class="steps__text">Jeg fyller ut skjemaene og henter inn det som mangler.</span>
-              </span>
-            </li>
-            <li>
-              <span class="steps__num" aria-hidden="true">4</span>
-              <span>
-                <strong>Vi svarer og følger opp</strong>
-                <span class="steps__text">Svaret formuleres, sendes og følges opp administrativt.</span>
-              </span>
-            </li>
-          </ul>
         </div>
 
-        <div class="band__quote reveal">
-          <blockquote>«Én kontakt&nbsp;– riktig hjelp.»</blockquote>
-          <p>
-            Jeg trenger ikke gjøre alt selv. Krever saken juridisk eller annen
-            spesialistkompetanse, finner jeg riktig fagperson og koordinerer
-            prosessen videre for deg.
-          </p>
-          <p style="margin-top:14px">
-            Du skal slippe å lure på hvem du skal ringe. Du ringer meg.
-          </p>
-          <a class="btn btn--light" href="#kontakt">Ta kontakt om en sak</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== SLIK JOBBER VI ======== -->
-  <section id="slik">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <p class="section-kicker">Slik jobber vi</p>
-        <h2>Du kjøper akkurat så mye hjelp du trenger</h2>
-        <p>
-          Ingen faste ansettelser, ingen lange kontrakter. Tre måter å gjøre det
-          på – vi finner ut sammen hva som passer deg.
-        </p>
-      </div>
-
-      <div class="card-grid">
-
-        <article class="plan reveal">
-          <p class="plan__tag">Ved behov</p>
-          <h3>Timer når det trengs</h3>
-          <p>
-            Noen timer når papirarbeidet har hopet seg opp, eller når det dukker
-            opp noe du ikke rekker selv. Du bestiller, jeg gjør jobben.
-          </p>
-          <p class="plan__note">Ingen binding. Passer godt for håndverkere, bønder og enkeltpersonforetak.</p>
-        </article>
-
-        <article class="plan reveal">
-          <p class="plan__tag">Fast avtale</p>
-          <h3>Et fast antall timer hver måned</h3>
-          <p>
-            Du vet hva du får og hva det koster, og kontoret holdes i orden
-            løpende i stedet for å hope seg opp. Timene avtales på forhånd.
-          </p>
-          <p class="plan__note">Passer bedrifter som har jevnt med administrasjon, men ikke nok til en stilling.</p>
-        </article>
-
-        <article class="plan reveal">
-          <p class="plan__tag">Prosjekt eller periode</p>
-          <h3>Ekstra kapasitet i en avgrenset periode</h3>
-          <p>
-            Et prosjekt som skal i havn, en ansatt i permisjon eller en travel
-            sesong. Jeg går inn i en avtalt periode og leverer.
-          </p>
-          <p class="plan__note">Passer større virksomheter og ledere som trenger erfaren støtte raskt.</p>
-        </article>
-
-      </div>
-
-      <div class="section-foot reveal">
-        <p>Usikker på hva du trenger? Det er helt greit – da finner vi ut av det sammen.</p>
-        <a class="btn btn--primary" href="#kontakt">Be om et uforpliktende tilbud</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== HVEM ER KUNDEN ======== -->
-  <section id="hvem" class="section-alt">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <p class="section-kicker">Hvem jeg jobber for</p>
-        <h2>Like relevant for snekkeren som for styrerommet</h2>
-        <p>
-          Behovet er det samme enten du er én person med for mye papirarbeid
-          eller en virksomhet som trenger erfaren administrativ støtte.
-        </p>
-      </div>
-
-      <ul class="who-grid reveal">
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Selvstendig næringsdrivende</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Håndverkere</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Bønder</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Små bedrifter med 1–10 ansatte</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Familiebedrifter</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Konsulenter og rådgivere</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Mellomstore og større virksomheter</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Ledere som trenger støtte</li>
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Midlertidig ekstra kapasitet</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ======== OM TRUDE ======== -->
-  <section id="om">
-    <div class="container">
-      <div class="about">
-
-        <figure class="about__figure reveal">
-          <!-- TODO: når bilder/trude.webp foreligger, bytt blokken under med:
-               <img class="about__photo" src="bilder/trude.webp" width="800" height="1000"
-                    alt="Trude Øiesvold, KontorKlar" loading="lazy"> -->
-          <div class="about__placeholder" role="img" aria-label="Portrett av Trude Øiesvold kommer">
-            <span>TØ</span>
+        <div class="brev reveal">
+          <div class="brev__ark">
+            <p class="brev__hode">
+              <strong>Kommunen</strong>
+              <span>Saksnr. 2026/1184</span>
+            </p>
+            <p class="brev__tittel">Vedrørende søknad om dispensasjon</p>
+            <p>
+              <span class="merke">1</span>
+              Vi viser til Deres henvendelse av 12. august. Saken er registrert
+              og oversendt saksbehandler for videre vurdering.
+            </p>
+            <p>
+              <span class="merke">2</span>
+              Frist for tilbakemelding:
+              <span class="brev__frist">15. oktober</span>
+            </p>
+            <p>
+              <span class="merke">3</span>
+              Følgende dokumentasjon må ettersendes: situasjonskart, nabovarsel
+              og redegjørelse for tiltaket.
+            </p>
+            <p>
+              <span class="merke">4</span>
+              Svar sendes skriftlig. Manglende tilbakemelding innen fristen
+              medfører at saken avsluttes uten vedtak.
+            </p>
+            <div class="brev__fyll" aria-hidden="true"></div>
           </div>
-        </figure>
 
-        <div class="about__body reveal">
-          <p class="section-kicker">Om KontorKlar</p>
-          <h2>Personen du kan spørre</h2>
-          <p>
-            Bak KontorKlar står Trude Øiesvold, med lang erfaring innen
-            administrasjon, koordinering, prosjektstøtte og lederstøtte fra både
-            privat og offentlig sektor.
-          </p>
-          <p>
-            Erfaringen spenner fra kundeservice, ordrebehandling, dokumenter,
-            fakturabehandling og generell kontoradministrasjon til arbeid i
-            advokatbransjen, prosjektstøtte og støtte til administrativ og
-            politisk ledelse på høyt nivå.
-          </p>
-          <p>
-            Det betyr at jeg håndterer både de enkle, praktiske kontoroppgavene og
-            de mer sammensatte administrative oppdragene – og at du kan si det
-            som mange kunder sier:
-          </p>
-
-          <p class="about__quote">«Kan du ordne dette for meg?»</p>
-
-          <p>Det er hele poenget med KontorKlar.</p>
-
-          <ul class="values">
-            <li>Fleksibilitet</li>
-            <li>Struktur</li>
-            <li>Tillit</li>
-            <li>Erfaring</li>
-            <li>Diskresjon</li>
-            <li>Gjennomføring</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== KONTAKT ======== -->
-  <section id="kontakt" class="section-alt">
-    <div class="container">
-      <div class="contact">
-
-        <div class="reveal">
-          <p class="section-kicker">Kontakt</p>
-          <h2>Fortell meg hva som ligger og venter</h2>
-          <p>
-            Du trenger ikke ha oversikt over hva du trenger hjelp til. Beskriv
-            situasjonen med dine egne ord, så tar jeg kontakt og foreslår hvordan
-            vi kan løse det. Det koster ingenting å spørre.
-          </p>
-
-          <ul class="contact-list">
-            <li>
-              <strong>E-post</strong>
-              <!-- TODO: sett inn kundens e-postadresse (både her og i skjemaet under) -->
-              <a href="mailto:TODO@kontorklar.no">TODO@kontorklar.no</a>
-            </li>
-            <li>
-              <strong>Telefon</strong>
-              <!-- TODO: sett inn telefonnummer -->
-              <a href="tel:+47TODO">TODO</a>
-            </li>
-            <li>
-              <strong>Svartid</strong>
-              <span>Normalt innen én virkedag</span>
-            </li>
-          </ul>
-
-          <div class="contact-steps">
-            <p class="contact-steps__head">Slik går vi fram</p>
-            <ol>
-              <li>Du sender noen linjer om hva som ligger og venter.</li>
-              <li>Vi tar en kort prat – på telefon eller e-post, som du vil.</li>
-              <li>Du får et forslag med omfang og pris. Helt uforpliktende.</li>
+          <div>
+            <ol class="notat">
+              <li>
+                <span class="merke" aria-hidden="true">1</span>
+                <span>
+                  <strong>Vi skaper oversikt</strong>
+                  <span class="notat__tekst">Hva gjelder saken, hva blir du bedt om, og hva haster?</span>
+                </span>
+              </li>
+              <li>
+                <span class="merke" aria-hidden="true">2</span>
+                <span>
+                  <strong>Vi finner fristene</strong>
+                  <span class="notat__tekst">Så du vet nøyaktig hva som må være gjort, og når.</span>
+                </span>
+              </li>
+              <li>
+                <span class="merke" aria-hidden="true">3</span>
+                <span>
+                  <strong>Vi samler dokumentasjonen</strong>
+                  <span class="notat__tekst">Jeg fyller ut skjemaene og henter inn det som mangler.</span>
+                </span>
+              </li>
+              <li>
+                <span class="merke" aria-hidden="true">4</span>
+                <span>
+                  <strong>Vi svarer og følger opp</strong>
+                  <span class="notat__tekst">Svaret formuleres, sendes og følges opp administrativt.</span>
+                </span>
+              </li>
             </ol>
+
+            <div class="notat__slutt">
+              <blockquote>«Én kontakt&nbsp;– riktig hjelp.»</blockquote>
+              <p>
+                Jeg trenger ikke gjøre alt selv. Krever saken juridisk eller
+                annen spesialistkompetanse, finner jeg riktig fagperson og
+                koordinerer prosessen videre for deg.
+              </p>
+              <a class="btn btn--light" href="#kontakt">Ta kontakt om en sak</a>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 03 SLIK JOBBER VI ======== -->
+  <section id="slik" class="doc">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">03</span>
+        <p class="doc__label">Slik jobber vi</p>
+      </div>
+
+      <div class="doc__body">
+        <div class="doc__head reveal">
+          <h2>Du kjøper akkurat så mye hjelp du trenger</h2>
+          <p>
+            Ingen faste ansettelser, ingen lange kontrakter. Tre måter å gjøre
+            det på – vi finner ut sammen hva som passer deg.
+          </p>
+        </div>
+
+        <div class="modeller reveal">
+          <div class="modell">
+            <p class="modell__merke">Ved behov</p>
+            <h3>Timer når det trengs</h3>
+            <p>
+              Noen timer når papirarbeidet har hopet seg opp, eller når det
+              dukker opp noe du ikke rekker selv. Du bestiller, jeg gjør jobben.
+            </p>
+            <p class="modell__note">Ingen binding. Passer godt for håndverkere, bønder og enkeltpersonforetak.</p>
+          </div>
+
+          <div class="modell">
+            <p class="modell__merke">Fast avtale</p>
+            <h3>Et fast antall timer hver måned</h3>
+            <p>
+              Du vet hva du får og hva det koster, og kontoret holdes i orden
+              løpende i stedet for å hope seg opp. Timene avtales på forhånd.
+            </p>
+            <p class="modell__note">Passer bedrifter som har jevnt med administrasjon, men ikke nok til en stilling.</p>
+          </div>
+
+          <div class="modell">
+            <p class="modell__merke">Prosjekt eller periode</p>
+            <h3>Ekstra kapasitet i en avgrenset periode</h3>
+            <p>
+              Et prosjekt som skal i havn, en ansatt i permisjon eller en travel
+              sesong. Jeg går inn i en avtalt periode og leverer.
+            </p>
+            <p class="modell__note">Passer større virksomheter og ledere som trenger erfaren støtte raskt.</p>
+          </div>
+        </div>
+
+        <div class="modeller__foot reveal">
+          <p>Usikker på hva du trenger? Det er helt greit – da finner vi ut av det sammen.</p>
+          <a class="btn btn--primary" href="#kontakt">Be om et uforpliktende tilbud</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 04 HVEM ======== -->
+  <section id="hvem" class="doc doc--alt">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">04</span>
+        <p class="doc__label">Hvem jeg jobber for</p>
+      </div>
+
+      <div class="doc__body">
+        <div class="doc__head reveal">
+          <h2>Like relevant for snekkeren som for styrerommet</h2>
+          <p>
+            Behovet er det samme enten du er én person med for mye papirarbeid
+            eller en virksomhet som trenger erfaren administrativ støtte.
+          </p>
+        </div>
+
+        <p class="termer reveal"><span>Selvstendig næringsdrivende</span> <i>·</i> <span>Håndverkere</span> <i>·</i> <span>Bønder</span> <i>·</i> <span>Små bedrifter med 1–10 ansatte</span> <i>·</i> <span>Familiebedrifter</span> <i>·</i> <span>Konsulenter og rådgivere</span> <i>·</i> <span>Mellomstore og større virksomheter</span> <i>·</i> <span>Ledere som trenger støtte</span> <i>·</i> <span>Midlertidig ekstra kapasitet</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 05 OM TRUDE ======== -->
+  <section id="om" class="doc doc--linje">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">05</span>
+        <p class="doc__label">Om KontorKlar</p>
+      </div>
+
+      <div class="doc__body">
+        <div class="om">
+          <figure class="om__figur reveal">
+            <!-- TODO: når bilder/trude.webp foreligger, bytt blokken under med:
+                 <img class="om__foto" src="bilder/trude.webp" width="800" height="1000"
+                      alt="Trude Øiesvold, KontorKlar" loading="lazy"> -->
+            <div class="om__plassholder" role="img" aria-label="Portrett av Trude Øiesvold kommer">
+              <span>TØ</span>
+            </div>
+          </figure>
+
+          <div class="om__tekst reveal">
+            <h2>Personen du kan spørre</h2>
+            <p style="margin-top:16px">
+              Bak KontorKlar står Trude Øiesvold, med lang erfaring innen
+              administrasjon, koordinering, prosjektstøtte og lederstøtte fra
+              både privat og offentlig sektor.
+            </p>
+            <p>
+              Erfaringen spenner fra kundeservice, ordrebehandling, dokumenter,
+              fakturabehandling og generell kontoradministrasjon til arbeid i
+              advokatbransjen, prosjektstøtte og støtte til administrativ og
+              politisk ledelse på høyt nivå.
+            </p>
+            <p>
+              Det betyr at jeg håndterer både de enkle, praktiske
+              kontoroppgavene og de mer sammensatte administrative oppdragene –
+              og at du kan si det som mange kunder sier:
+            </p>
+
+            <p class="om__sitat">«Kan du ordne dette for meg?»</p>
+
+            <p>Det er hele poenget med KontorKlar.</p>
+
+            <p class="verdier">Fleksibilitet <i>·</i> Struktur <i>·</i> Tillit <i>·</i> Erfaring <i>·</i> Diskresjon <i>·</i> Gjennomføring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 06 KONTAKT ======== -->
+  <section id="kontakt" class="doc doc--alt">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">06</span>
+        <p class="doc__label">Kontakt</p>
+      </div>
+
+      <div class="doc__body">
+        <div class="kontakt">
+          <div class="reveal">
+            <h2>Fortell meg hva som ligger og venter</h2>
+            <p style="margin-top:14px">
+              Du trenger ikke ha oversikt over hva du trenger hjelp til. Beskriv
+              situasjonen med dine egne ord, så tar jeg kontakt og foreslår
+              hvordan vi kan løse det. Det koster ingenting å spørre.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <strong>E-post</strong>
+                <!-- TODO: sett inn kundens e-postadresse (både her og i skjemaet under) -->
+                <a href="mailto:TODO@kontorklar.no">TODO@kontorklar.no</a>
+              </li>
+              <li>
+                <strong>Telefon</strong>
+                <!-- TODO: sett inn telefonnummer -->
+                <a href="tel:+47TODO">TODO</a>
+              </li>
+              <li>
+                <strong>Svartid</strong>
+                <span>Normalt innen én virkedag</span>
+              </li>
+            </ul>
+
+            <div class="contact-steps">
+              <p class="contact-steps__head">Slik går vi fram</p>
+              <ol>
+                <li>Du sender noen linjer om hva som ligger og venter.</li>
+                <li>Vi tar en kort prat – på telefon eller e-post, som du vil.</li>
+                <li>Du får et forslag med omfang og pris. Helt uforpliktende.</li>
+              </ol>
+            </div>
+          </div>
 
         <!-- FormSubmit: første innsending utløser en aktiveringsmail til adressen under.
              Skjemaet fungerer helt uten JavaScript. -->
@@ -542,7 +569,7 @@
             foretrekker det.
           </p>
         </form>
-
+        </div>
       </div>
     </div>
   </section>

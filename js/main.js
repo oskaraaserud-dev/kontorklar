@@ -9,7 +9,7 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- Header: bakgrunn og skygge etter skroll ---------- */
+  /* ---------- Header: bakgrunn etter skroll ---------- */
 
   var header = document.getElementById("siteHeader");
 
@@ -18,17 +18,77 @@
     header.classList.toggle("is-scrolled", window.scrollY > 40);
   }
 
-  var ticking = false;
+  /* ---------- Haugen som sorterer seg ----------
+     Arkene ligger ferdig sortert i HTML-en. Her spres de ut ved
+     sidelast, og legger seg på plass igjen mens man ruller gjennom
+     hero-en. Blir denne filen aldri lastet, står de bare sortert.
+
+     data-dx og data-dy er forskyvning i prosent av haugens bredde,
+     slik at spredningen skalerer med elementet. */
+
+  var haug = document.getElementById("haug");
+  var ark = haug ? Array.prototype.slice.call(haug.querySelectorAll(".ark")) : [];
+  var sorterer = ark.length > 0 && !reduceMotion;
+
+  var haugData = ark.map(function (el) {
+    return {
+      el: el,
+      dx: parseFloat(el.getAttribute("data-dx")) || 0,
+      dy: parseFloat(el.getAttribute("data-dy")) || 0,
+      r: parseFloat(el.getAttribute("data-r")) || 0
+    };
+  });
+
+  function haugStrekning() {
+    // Ferdig sortert omtrent når hero-en er rullet forbi
+    return Math.max(240, window.innerHeight * 0.55);
+  }
+
+  function tegnHaug() {
+    if (!sorterer) return;
+
+    // På smale skjermer får haugen ligge ferdig sortert – der er den
+    // et lite bilde under teksten, ikke noe man ruller gjennom.
+    var p = window.innerWidth < 900
+      ? 1
+      : Math.min(1, Math.max(0, window.scrollY / haugStrekning()));
+
+    var igjen = 1 - p;
+    var bredde = haug.offsetWidth;
+
+    for (var i = 0; i < haugData.length; i++) {
+      var d = haugData[i];
+      if (igjen === 0) {
+        d.el.style.transform = "";
+      } else {
+        d.el.style.transform =
+          "translate(" + (d.dx * igjen * bredde) / 100 + "px," +
+          (d.dy * igjen * bredde) / 100 + "px) rotate(" + d.r * igjen + "deg)";
+      }
+    }
+
+    haug.classList.toggle("skjul-lapper", p <= 0.85);
+  }
+
+  /* ---------- Felles skroll-lytter ---------- */
+
+  var venter = false;
   window.addEventListener("scroll", function () {
-    if (ticking) return;
-    ticking = true;
+    if (venter) return;
+    venter = true;
     window.requestAnimationFrame(function () {
       updateHeader();
-      ticking = false;
+      tegnHaug();
+      venter = false;
     });
   }, { passive: true });
 
+  window.addEventListener("resize", tegnHaug);
+
   updateHeader();
+  tegnHaug();
+
+  // Sorteres det ikke, står merkelappene synlige slik CSS-en har dem
 
   /* ---------- Mobilmeny ---------- */
 
@@ -51,12 +111,10 @@
       navToggle.setAttribute("aria-label", open ? "Lukk meny" : "Åpne meny");
     });
 
-    // Lukk når man velger et menypunkt
     siteNav.addEventListener("click", function (e) {
       if (e.target.tagName === "A") closeNav();
     });
 
-    // Escape lukker menyen og gir fokus tilbake til knappen
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && siteNav.classList.contains("is-open")) {
         closeNav();
