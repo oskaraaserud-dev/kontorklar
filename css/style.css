@@ -814,6 +814,187 @@ ul { list-style: none; }
 .footer__credit { font-size: 0.84rem; margin-top: 10px; }
 .footer__credit a { color: #fff; text-decoration: underline; }
 
+/* ======== FAST KONTORKLAR-DAG ========
+   Signaturtjenesten. Grønn bunn er en flate som ikke er brukt ellers,
+   så seksjonen skiller seg ut uten å konkurrere med det mørke brevet. */
+
+.fastdag { background: var(--green-wash); }
+.fastdag .doc__rail { border-top-color: var(--green-strong); }
+.fastdag .doc__label { color: var(--green-dark); }
+.fastdag .doc__num { color: var(--green-strong); }
+
+.fastdag__grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+}
+
+.fastdag__tekst h2 { margin-bottom: 18px; }
+.fastdag__tekst p { color: var(--ink-soft); }
+.fastdag__tekst p + p { margin-top: 14px; }
+
+.fastdag__slagord {
+  font-family: var(--font-head);
+  font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+  color: var(--ink) !important;
+  margin-top: 20px;
+}
+
+.fastdag__pris {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--green);
+}
+.fastdag__tall {
+  font-family: var(--font-head);
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  line-height: 1;
+  color: var(--ink) !important;
+}
+.fastdag__tall span {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.fastdag__vilkaar { margin-top: 10px; font-size: 0.97rem; }
+.fastdag__sted { margin-top: 4px; font-size: 0.9rem; color: var(--ink-faint) !important; }
+.fastdag__pris .btn { margin-top: 24px; }
+
+/* Kalenderbladet – samme papirspråk som arkene i hero-en */
+.kal {
+  background: #fff;
+  border: 1px solid #d3d6cd;
+  border-radius: 3px;
+  padding: clamp(18px, 2.2vw, 26px);
+  box-shadow: 0 10px 30px rgba(26, 51, 69, 0.10);
+  transform: rotate(-1deg);
+  max-width: 320px;
+}
+.kal__hode {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  color: var(--ink) !important;
+  text-align: center;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.kal__uke,
+.kal__rutenett {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+.kal__uke {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+.kal__rutenett {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  row-gap: 7px;
+}
+.kal__rutenett span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+}
+
+/* Dagen som er satt av. Samme håndtegnede ring som fristen i brevet. */
+.kal__dag {
+  color: var(--ink);
+  font-weight: 600;
+  border: 2px solid #b4553f;
+  border-radius: 46% 54% 50% 50% / 56% 44% 56% 44%;
+}
+
+/* ======== PRISER ======== */
+
+.modell__pris {
+  font-family: var(--font-head);
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  line-height: 1;
+  color: var(--ink) !important;
+  margin-bottom: 6px;
+}
+.modell__pris span {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.modell__timer {
+  font-size: 0.88rem;
+  color: var(--ink-faint) !important;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px dotted var(--rule);
+}
+
+/* Skreddersydde tjenester – bevisst dempet under pakkene */
+.ovrige { margin-top: clamp(34px, 4vw, 52px); }
+.ovrige__hode {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint) !important;
+  margin-bottom: 4px;
+}
+.ovrige dl { display: grid; }
+.ovrige dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 13px 0;
+  border-top: 1px solid var(--rule);
+}
+.ovrige dl > div:last-child { border-bottom: 1px solid var(--rule); }
+.ovrige dt { font-size: 0.97rem; color: var(--ink-soft); }
+.ovrige dd {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.ovrige__note {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  color: var(--ink-faint) !important;
+}
+
+/* ======== SOSIALE PROFILER I FOOTEREN ======== */
+
+.footer__sosialt {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 22px 0 4px;
+}
+.footer__sosialt a {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--dark-border);
+  color: #fff;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.footer__sosialt a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--dark-soft);
+}
+.footer__sosialt svg { width: 18px; height: 18px; }
+
 /* ======== JURIDISKE SIDER (personvern) ======== */
 
 .legal-hero {
@@ -927,6 +1108,8 @@ ul { list-style: none; }
   .hero__inner { padding-bottom: 0; }
 
   .brev { grid-template-columns: 1fr; }
+  .fastdag__grid { grid-template-columns: 1fr; }
+  .kal { max-width: 280px; margin: 0 auto; }
   .om { grid-template-columns: 1fr; }
   .om__figur { max-width: 320px; }
   .kontakt { grid-template-columns: 1fr; }

@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 
 <link rel="icon" type="image/png" href="favicon.png">
 
@@ -46,9 +46,10 @@
   "image": "https://kontorklar.no/bilder/og-image.png",
   "logo": "https://kontorklar.no/bilder/logo.png",
   "slogan": "Du gjør jobben. Jeg tar kontorjobben.",
+  "priceSpecification": { "@type": "PriceSpecification", "valueAddedTaxIncluded": false },
   "email": "TODO@kontorklar.no",
   "telephone": "+47TODO",
-  "priceRange": "$$",
+  "priceRange": "850 - 16000 NOK",
   "founder": { "@type": "Person", "name": "Trude Øiesvold" },
   "address": {
     "@type": "PostalAddress",
@@ -69,11 +70,42 @@
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Tjenester",
+    "name": "Tjenester og priser",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kontorhjelp" } },
+      {
+        "@type": "Offer",
+        "name": "Fast KontorKlar-dag",
+        "description": "Inntil 7 timer, én fast dag per måned.",
+        "price": "5500",
+        "priceCurrency": "NOK",
+        "itemOffered": { "@type": "Service", "name": "Fast KontorKlar-dag" }
+      },
+      {
+        "@type": "Offer",
+        "name": "KontorKlar Mini",
+        "description": "5 timer, ingen binding.",
+        "price": "4000",
+        "priceCurrency": "NOK",
+        "itemOffered": { "@type": "Service", "name": "Kontorhjelp" }
+      },
+      {
+        "@type": "Offer",
+        "name": "KontorKlar Fast 10",
+        "description": "10 timer per måned.",
+        "price": "8000",
+        "priceCurrency": "NOK",
+        "itemOffered": { "@type": "Service", "name": "Kontorhjelp" }
+      },
+      {
+        "@type": "Offer",
+        "name": "KontorKlar Fast 20",
+        "description": "20 timer per måned.",
+        "price": "16000",
+        "priceCurrency": "NOK",
+        "itemOffered": { "@type": "Service", "name": "Administrativ støtte" }
+      },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brev, skjemaer og offentlig kontakt" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Administrativ støtte og prosjektstøtte" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prosjektstøtte" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lederstøtte" } }
     ]
   }
@@ -104,7 +136,7 @@
   <nav class="site-nav" id="siteNav" aria-label="Hovedmeny">
     <a href="#tjenester">Tjenester</a>
     <a href="#offentlig">Brev og skjemaer</a>
-    <a href="#slik">Slik jobber vi</a>
+    <a href="#fastdag">Priser</a>
     <a href="#om">Om meg</a>
     <a href="#kontakt" class="nav-cta">Kontakt</a>
   </nav>
@@ -132,9 +164,10 @@
       </div>
 
       <ul class="hero__points">
-        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Ingen ansettelse, ingen arbeidsgiveransvar</li>
+        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Ekstra kapasitet – uten å måtte ansette</li>
         <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Fra noen timer til fast avtale</li>
         <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Taushetsplikt og diskresjon</li>
+        <li><svg aria-hidden="true"><use href="#ico-check"></use></svg> Hele Norge – digitalt, og fysisk etter avtale</li>
       </ul>
     </div>
 
@@ -209,7 +242,7 @@
               </p>
               <p class="post__stikk">
                 Frister · Dokumentasjon · Utfylling av skjemaer · Formulering av
-                svar · Oppfølging
+                svar · Administrativ oppfølging
               </p>
             </div>
           </article>
@@ -316,15 +349,15 @@
               <li>
                 <span class="merke" aria-hidden="true">3</span>
                 <span>
-                  <strong>Vi samler dokumentasjonen</strong>
-                  <span class="notat__tekst">Jeg fyller ut skjemaene og henter inn det som mangler.</span>
+                  <strong>Vi fyller ut og samler dokumentasjonen</strong>
+                  <span class="notat__tekst">Jeg fyller ut skjemaene, formulerer svaret og henter inn det som mangler.</span>
                 </span>
               </li>
               <li>
                 <span class="merke" aria-hidden="true">4</span>
                 <span>
-                  <strong>Vi svarer og følger opp</strong>
-                  <span class="notat__tekst">Svaret formuleres, sendes og følges opp administrativt.</span>
+                  <strong>Vi følger opp administrativt</strong>
+                  <span class="notat__tekst">Svaret sendes, og saken følges opp til den er i havn.</span>
                 </span>
               </li>
             </ol>
@@ -332,9 +365,10 @@
             <div class="notat__slutt">
               <blockquote>«Én kontakt&nbsp;– riktig hjelp.»</blockquote>
               <p>
-                Jeg trenger ikke gjøre alt selv. Krever saken juridisk eller
-                annen spesialistkompetanse, finner jeg riktig fagperson og
-                koordinerer prosessen videre for deg.
+                <strong>KontorKlar tilbyr administrativ bistand, ikke juridisk
+                rådgivning.</strong> Krever saken juridisk eller annen
+                spesialistkompetanse, finner jeg riktig fagperson og koordinerer
+                prosessen videre for deg.
               </p>
               <a class="btn btn--light" href="#kontakt">Ta kontakt om en sak</a>
             </div>
@@ -344,68 +378,158 @@
     </div>
   </section>
 
-  <!-- ======== 03 SLIK JOBBER VI ======== -->
-  <section id="slik" class="doc">
+  <!-- ======== 03 FAST KONTORKLAR-DAG ========
+       Signaturtjenesten. Kalenderbladet ringer rundt dagen du setter av,
+       med nøyaktig samme håndtegnede form som fristen i brevet over –
+       der ringes en frist du har fått, her dagen du bruker på å rekke den. -->
+  <section id="fastdag" class="doc fastdag">
     <div class="doc__inner">
       <div class="doc__rail">
         <span class="doc__num">03</span>
-        <p class="doc__label">Slik jobber vi</p>
+        <p class="doc__label">Fast KontorKlar-dag</p>
       </div>
 
       <div class="doc__body">
-        <div class="doc__head reveal">
-          <h2>Du kjøper akkurat så mye hjelp du trenger</h2>
-          <p>
-            Ingen faste ansettelser, ingen lange kontrakter. Tre måter å gjøre
-            det på – vi finner ut sammen hva som passer deg.
-          </p>
-        </div>
+        <div class="fastdag__grid">
 
-        <div class="modeller reveal">
-          <div class="modell">
-            <p class="modell__merke">Ved behov</p>
-            <h3>Timer når det trengs</h3>
-            <p>
-              Noen timer når papirarbeidet har hopet seg opp, eller når det
-              dukker opp noe du ikke rekker selv. Du bestiller, jeg gjør jobben.
-            </p>
-            <p class="modell__note">Ingen binding. Passer godt for håndverkere, bønder og enkeltpersonforetak.</p>
+          <div class="kal reveal" aria-hidden="true">
+            <p class="kal__hode">Oktober</p>
+            <div class="kal__uke">
+              <span>ma</span><span>ti</span><span>on</span><span>to</span><span>fr</span>
+            </div>
+            <div class="kal__rutenett">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>1</span>
+            <span>2</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span class="kal__dag">15</span>
+            <span>16</span>
+            <span>19</span>
+            <span>20</span>
+            <span>21</span>
+            <span>22</span>
+            <span>23</span>
+            <span>26</span>
+            <span>27</span>
+            <span>28</span>
+            <span>29</span>
+            <span>30</span>
+            </div>
           </div>
 
-          <div class="modell">
-            <p class="modell__merke">Fast avtale</p>
-            <h3>Et fast antall timer hver måned</h3>
+          <div class="fastdag__tekst reveal">
+            <h2>Kontorjobben har en tendens til å hope seg opp?</h2>
             <p>
-              Du vet hva du får og hva det koster, og kontoret holdes i orden
-              løpende i stedet for å hope seg opp. Timene avtales på forhånd.
+              Sett av en fast KontorKlar-dag – for eksempel én dag i måneden –
+              så sørger jeg for at det blir tatt tak i.
             </p>
-            <p class="modell__note">Passer bedrifter som har jevnt med administrasjon, men ikke nok til en stilling.</p>
+            <p>
+              E-post som venter, tilbud som skal sendes, fakturagrunnlag som må
+              gjøres klart, dokumenter, skjemaer, kundesvar, bestillinger og
+              oppfølging.
+            </p>
+            <p class="fastdag__slagord">Du gjør jobben. Jeg tar kontorjobben.</p>
+
+            <div class="fastdag__pris">
+              <p class="fastdag__tall">5 500 kr<span>/mnd</span></p>
+              <p class="fastdag__vilkaar">
+                Inntil 7 timer, én fast dag per måned. Eks. mva.
+              </p>
+              <p class="fastdag__sted">
+                Kan gjennomføres digitalt eller hos kunden etter avtale.
+              </p>
+              <a class="btn btn--primary" href="#kontakt">Book en uforpliktende prat</a>
+            </div>
           </div>
 
-          <div class="modell">
-            <p class="modell__merke">Prosjekt eller periode</p>
-            <h3>Ekstra kapasitet i en avgrenset periode</h3>
-            <p>
-              Et prosjekt som skal i havn, en ansatt i permisjon eller en travel
-              sesong. Jeg går inn i en avtalt periode og leverer.
-            </p>
-            <p class="modell__note">Passer større virksomheter og ledere som trenger erfaren støtte raskt.</p>
-          </div>
-        </div>
-
-        <div class="modeller__foot reveal">
-          <p>Usikker på hva du trenger? Det er helt greit – da finner vi ut av det sammen.</p>
-          <a class="btn btn--primary" href="#kontakt">Be om et uforpliktende tilbud</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== 04 HVEM ======== -->
-  <section id="hvem" class="doc doc--alt">
+  <!-- ======== 04 PRISER ======== -->
+  <section id="priser" class="doc doc--alt">
     <div class="doc__inner">
       <div class="doc__rail">
         <span class="doc__num">04</span>
+        <p class="doc__label">Priser</p>
+      </div>
+
+      <div class="doc__body">
+        <div class="doc__head reveal">
+          <h2>Pakkeløsninger</h2>
+          <p>
+            Fleksibel hjelp tilpasset behovet ditt. Tre måter å gjøre det på –
+            vi finner ut sammen hva som passer deg.
+          </p>
+        </div>
+
+        <div class="modeller reveal">
+          <div class="modell">
+            <p class="modell__merke">KontorKlar Mini</p>
+            <p class="modell__pris">4 000 kr</p>
+            <p class="modell__timer">5 timer</p>
+            <p>
+              For deg som trenger litt hjelp til å få unna det som har hopet seg
+              opp. Ingen binding.
+            </p>
+          </div>
+
+          <div class="modell">
+            <p class="modell__merke">KontorKlar Fast 10</p>
+            <p class="modell__pris">8 000 kr<span>/mnd</span></p>
+            <p class="modell__timer">10 timer per måned</p>
+            <p>Fast kontorhjelp hver måned.</p>
+          </div>
+
+          <div class="modell">
+            <p class="modell__merke">KontorKlar Fast 20</p>
+            <p class="modell__pris">16 000 kr<span>/mnd</span></p>
+            <p class="modell__timer">20 timer per måned</p>
+            <p>For bedrifter som trenger jevnlig administrativ støtte.</p>
+          </div>
+        </div>
+
+        <!-- Skreddersydde tjenester ligger bevisst dempet under pakkene -->
+        <div class="ovrige reveal">
+          <p class="ovrige__hode">Øvrige priser</p>
+          <dl>
+            <div>
+              <dt>Ordinær kontorhjelp og administrativ støtte</dt>
+              <dd>850 kr/time</dd>
+            </div>
+            <div>
+              <dt>Prosjektstøtte</dt>
+              <dd>fra 900 kr/time</dd>
+            </div>
+            <div>
+              <dt>Lederstøtte</dt>
+              <dd>fra 950 kr/time</dd>
+            </div>
+          </dl>
+          <p class="ovrige__note">
+            Ved større eller mer omfattende behov avtales pris individuelt.
+            Alle priser er eks. mva.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 05 HVEM ======== -->
+  <section id="hvem" class="doc doc--linje">
+    <div class="doc__inner">
+      <div class="doc__rail">
+        <span class="doc__num">05</span>
         <p class="doc__label">Hvem jeg jobber for</p>
       </div>
 
@@ -423,23 +547,19 @@
     </div>
   </section>
 
-  <!-- ======== 05 OM TRUDE ======== -->
+  <!-- ======== 06 OM TRUDE ======== -->
   <section id="om" class="doc doc--linje">
     <div class="doc__inner">
       <div class="doc__rail">
-        <span class="doc__num">05</span>
+        <span class="doc__num">06</span>
         <p class="doc__label">Om KontorKlar</p>
       </div>
 
       <div class="doc__body">
         <div class="om">
           <figure class="om__figur reveal">
-            <!-- TODO: når bilder/trude.webp foreligger, bytt blokken under med:
-                 <img class="om__foto" src="bilder/trude.webp" width="800" height="1000"
-                      alt="Trude Øiesvold, KontorKlar" loading="lazy"> -->
-            <div class="om__plassholder" role="img" aria-label="Portrett av Trude Øiesvold kommer">
-              <span>TØ</span>
-            </div>
+            <img class="om__foto" src="bilder/trude.jpg" width="800" height="1000"
+                 alt="Trude Øiesvold, KontorKlar" loading="lazy">
           </figure>
 
           <div class="om__tekst reveal">
@@ -472,11 +592,11 @@
     </div>
   </section>
 
-  <!-- ======== 06 KONTAKT ======== -->
+  <!-- ======== 07 KONTAKT ======== -->
   <section id="kontakt" class="doc doc--alt">
     <div class="doc__inner">
       <div class="doc__rail">
-        <span class="doc__num">06</span>
+        <span class="doc__num">07</span>
         <p class="doc__label">Kontakt</p>
       </div>
 
@@ -500,6 +620,10 @@
                 <strong>Telefon</strong>
                 <!-- TODO: sett inn telefonnummer -->
                 <a href="tel:+47TODO">TODO</a>
+              </li>
+              <li>
+                <strong>Område</strong>
+                <span>Hele Norge. Digitalt, og fysisk etter avtale.</span>
               </li>
               <li>
                 <strong>Svartid</strong>
@@ -585,11 +709,30 @@
   </div>
   <p class="footer__tagline">Du driver bedriften. Jeg holder orden på resten.</p>
   <!-- TODO: sett inn org.nr. og sted -->
+  <!-- TODO: fjern kommentaren under når Trude har sendt de faktiske
+       profiladressene. De hun sendte gikk til facebook.com og instagram.com
+       sine forsider, ikke til profilene. Legg samtidig de samme to adressene
+       inn i JSON-LD-en over som "sameAs": [ ... ].
+  <div class="footer__sosialt">
+    <a href="TODO" target="_blank" rel="noopener" aria-label="KontorKlar på Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/>
+      </svg>
+    </a>
+    <a href="TODO" target="_blank" rel="noopener" aria-label="KontorKlar på Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </div>
+  -->
   <p class="footer__legal"><a href="personvern.html">Personvernerklæring</a></p>
   <p class="footer__copy">© <span id="year">2026</span> KontorKlar. Org.nr. TODO.</p>
   <p class="footer__credit">Nettside laget av <a href="https://aaserudweb.no" target="_blank" rel="noopener">AaserudWeb</a></p>
 </footer>
 
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>
