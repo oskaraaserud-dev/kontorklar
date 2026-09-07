@@ -17,6 +17,7 @@ kontorklar/
 ├── takk.html         Kvittering etter skjemainnsending (noindex)
 ├── css/style.css     Ett stilark. Fargene ligger som variabler øverst.
 ├── js/main.js        Header ved skroll, mobilmeny, reveal, årstall
+├── send.php          Tar imot kontaktskjemaet og sender det som e-post
 ├── verktoy/          lag-logo.ps1 – bygger logovariantene fra originalfila
 ├── bilder/           Logo i tre varianter + delingsbilde (se under)
 ├── favicon.png       Fanikon, klippet ut av logomerket
@@ -37,7 +38,7 @@ venstremarg som blir stående mens innholdet ruller forbi.
 | 04 | `#priser` | Tre pakker, og øvrige priser dempet under |
 | 05 | `#hvem` | Målgruppene som én løpende linje |
 | 06 | `#om` | Trude Øiesvold, erfaring og verdier |
-| 07 | `#kontakt` | FormSubmit-skjema og kontaktopplysninger |
+| 07 | `#kontakt` | Kontaktskjema og kontaktopplysninger |
 
 Navlenken «Priser» peker på `#fastdag`, ikke `#priser`. Det er med vilje –
 signaturtjenesten skal treffes først.
@@ -74,20 +75,21 @@ Trude ønsket ikke postadresse i personvernerklæringen – foretaksnavn, org.nr
 e-post og telefon identifiserer behandlingsansvarlig, og det er tilstrekkelig
 etter personvernforordningen artikkel 13.
 
-To ting gjenstår:
+Skjemaet går nå til `send.php` på hennes eget webhotell. Kravet om
+behandling i EU/EØS er dermed innfridd strengere enn noen tjeneste kunne
+gjort: opplysningene forlater ikke Norge, og det finnes ingen databehandler
+å føre opp.
 
-- [ ] **Aktiver FormSubmit.** Send én testhenvendelse fra den publiserte siden.
-      FormSubmit sender da en aktiveringsmail til adressen over – den må bekreftes,
-      ellers kommer ingen henvendelser fram.
-- [ ] **Bytt ut FormSubmit.** Trude vil ha behandling i EU/EØS før lansering.
-      Beste løsning er et lite PHP-skript på hennes eget webhotell – da er ingen
-      tredjepart involvert i det hele tatt, og hele USA-avsnittet forsvinner ut
-      av personvernerklæringen. Domeneshop kjører PHP 8.2 som standard på
-      Webhotell Medium og større, fra servere i Oslo.
-      **Spør henne først: har hun webhotell, eller bare et registrert domene?**
-      Det er to ulike produkter. Faller PHP bort, er Tally (belgisk, EU-hostet)
-      eller Forminit (AWS Irland, med databehandleravtale) nærmeste alternativ –
-      begge må da føres opp som databehandler i punkt 5.
+Dette gjenstår:
+
+- [ ] **Opprett `nettside@kontorklar.no`** hos domene.no, som postkasse eller
+      alias videre til Trude. Skriptet sender fra denne adressen. Ligger
+      avsenderadressen på et annet domene enn nettstedet, havner e-posten lett
+      i søppelpost (SPF og DMARC).
+- [ ] **Test skjemaet etter opplasting.** PHP kjører ikke på GitHub Pages, så
+      det kan først testes når filene ligger hos domene.no. Send en ekte
+      henvendelse og bekreft at den kommer fram, at du havner på `takk.html`,
+      og at norske tegn vises riktig i e-posten.
 - [ ] Kontroller prisene mot Trudes e-post en siste gang før lansering. Dette
       er det eneste bindende innholdet på siden.
 
@@ -157,7 +159,12 @@ Google Fonts. Byttes de ut, må `<link>`-taggen endres i alle tre HTML-filene.
 
 ## Publisering
 
-FTP til Domeneshop med FileZilla. Last opp innholdet i mappa til webroten.
+**Webhotellet er hos domene.no**, ikke Domeneshop som de øvrige kundesidene.
+PHP 8 er med på alle deres pakker, og serverne står i Oslo. Kontrollpanelet er
+cPanel, så det er FTP eller filbehandleren der.
+
+Last opp innholdet i mappa til webroten. `send.php` må med – uten den virker
+ikke skjemaet.
 
 **Viktig:** endres `css/style.css` eller `js/main.js`, må de lastes opp sammen med
 HTML-filene. Lastes bare HTML-en opp, virker den nye siden halvveis.
@@ -166,7 +173,7 @@ HTML-filene. Lastes bare HTML-en opp, virker den nye siden halvveis.
 `css/style.css?v=2` og `js/main.js?v=2` i alle tre HTML-filene. Uten dette kan
 en besøkende få ny HTML sammen med gammel CSS fra nettleserens mellomlager, og
 siden ser ødelagt ut – innholdet klistrer seg til venstre kant og arkene i
-hero-en forsvinner. GitHub Pages og Domeneshop setter begge ti minutters
+hero-en forsvinner. GitHub Pages og de fleste webhotell setter ti minutters
 mellomlagring på filene, så det er ikke nok å bare laste opp på nytt.
 
 Git brukes til versjonskontroll, ikke deploy.
@@ -190,7 +197,26 @@ Git brukes til versjonskontroll, ikke deploy.
    iframe med fast bredde.
 5. Kjør `index.html` gjennom [validator.w3.org](https://validator.w3.org/) og
    JSON-LD-en gjennom Googles Rich Results Test.
-6. Send en testhenvendelse og bekreft at du havner på `takk.html`.
+6. Send en testhenvendelse **fra webhotellet**, ikke fra GitHub Pages. PHP
+   kjører ikke der, så skjemaet gir 404 på forhåndsvisningen. Det er ventet.
+
+## Skjemaet
+
+`send.php` tar imot skjemaet og sender det videre som e-post. Ingen tredjepart.
+
+Verdt å vite hvis noe skulle svikte:
+
+- Skriptet svarer alltid med en omdirigering – til `takk.html` hvis det gikk
+  bra, ellers tilbake til `index.html#kontakt`. Det viser aldri en feilmelding
+  til den besøkende.
+- Kommer ingenting fram, er den vanligste årsaken at `nettside@kontorklar.no`
+  ikke finnes, eller at `mail()` er slått av. Sjekk feilloggen i cPanel.
+- Er `mail()` upålitelig hos domene.no, er neste steg å sende via SMTP
+  (`smtp.domene.no`) med PHPMailer i stedet. Da trengs et passord, som ikke
+  skal ligge i git – legg det i en fil utenfor webroten.
+- Beskyttelsen mot søppelpost er en skjult honningkrukke, samme som før.
+  Kommer det spam likevel, er neste steg et enkelt regnestykke eller en
+  tidssperre – ikke captcha, som rammer ekte kunder hardest.
 
 ---
 

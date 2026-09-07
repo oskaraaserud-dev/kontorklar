@@ -644,14 +644,12 @@
             </div>
           </div>
 
-        <!-- FormSubmit: første innsending utløser en aktiveringsmail til adressen under.
-             Skjemaet fungerer helt uten JavaScript. -->
-        <form class="contact-form reveal" action="https://formsubmit.co/trude@kontorklar.no" method="POST">
-          <input type="hidden" name="_subject" value="Ny henvendelse fra kontorklar.no">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://kontorklar.no/takk.html">
-          <!-- Honeypot: fylles kun ut av roboter -->
+        <!-- Sendes til send.php på vårt eget webhotell. Ingen tredjepart,
+             og opplysningene forlater aldri norske servere. Fungerer helt
+             uten JavaScript. NB: PHP kjører ikke på GitHub Pages, så
+             skjemaet virker først når filene ligger hos domene.no. -->
+        <form class="contact-form reveal" action="send.php" method="POST">
+          <!-- Honningkrukke: fylles kun ut av roboter -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
@@ -691,9 +689,10 @@
 
           <p class="form-note">
             Opplysningene brukes kun til å svare på henvendelsen din – aldri til
-            markedsføring. Skjemaet sendes via tjenesten FormSubmit, som drives
-            fra USA. Se <a href="personvern.html">personvernerklæringen</a>, eller
-            send e-post direkte til
+            markedsføring. Skjemaet behandles på vårt eget webhotell i Norge, og
+            sendes ikke gjennom noen tredjepart. Se
+            <a href="personvern.html">personvernerklæringen</a>, eller send
+            e-post direkte til
             <a href="mailto:trude@kontorklar.no">trude@kontorklar.no</a> om du
             foretrekker det.
           </p>
