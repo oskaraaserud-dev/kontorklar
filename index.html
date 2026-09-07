@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 
 <link rel="icon" type="image/png" href="favicon.png">
 
@@ -48,7 +48,7 @@
   "slogan": "Du gjør jobben. Jeg tar kontorjobben.",
   "email": "trude@kontorklar.no",
   "telephone": "+4799791364",
-  "priceRange": "850 - 16000 NOK",
+  "priceRange": "795 - 14500 NOK",
   "legalName": "KontorKlar Øiesvold",
   "founder": { "@type": "Person", "name": "Trude Øiesvold" },
   "address": {
@@ -81,7 +81,7 @@
       {
         "@type": "Offer",
         "name": "Fast KontorKlar-dag",
-        "description": "Inntil 7 timer, én fast dag per måned.",
+        "description": "Én fast dag i måneden, inntil 7 timer.",
         "price": "5500",
         "priceCurrency": "NOK",
         "itemOffered": { "@type": "Service", "name": "Fast KontorKlar-dag" }
@@ -90,29 +90,51 @@
         "@type": "Offer",
         "name": "KontorKlar Mini",
         "description": "5 timer, ingen binding.",
-        "price": "4000",
+        "price": "3750",
         "priceCurrency": "NOK",
         "itemOffered": { "@type": "Service", "name": "Kontorhjelp" }
       },
       {
         "@type": "Offer",
-        "name": "KontorKlar Fast 10",
+        "name": "Fast KontorKlar 10",
         "description": "10 timer per måned.",
-        "price": "8000",
-        "priceCurrency": "NOK",
-        "itemOffered": { "@type": "Service", "name": "Kontorhjelp" }
-      },
-      {
-        "@type": "Offer",
-        "name": "KontorKlar Fast 20",
-        "description": "20 timer per måned.",
-        "price": "16000",
+        "price": "7500",
         "priceCurrency": "NOK",
         "itemOffered": { "@type": "Service", "name": "Administrativ støtte" }
       },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brev, skjemaer og offentlig kontakt" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prosjektstøtte" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lederstøtte" } }
+      {
+        "@type": "Offer",
+        "name": "Fast KontorKlar 20",
+        "description": "20 timer per måned.",
+        "price": "14500",
+        "priceCurrency": "NOK",
+        "itemOffered": { "@type": "Service", "name": "Administrativ støtte" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Kontorhjelp per time",
+        "price": "795",
+        "priceCurrency": "NOK",
+        "unitCode": "HUR",
+        "itemOffered": { "@type": "Service", "name": "Kontorhjelp" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Prosjektstøtte per time",
+        "price": "895",
+        "priceCurrency": "NOK",
+        "unitCode": "HUR",
+        "itemOffered": { "@type": "Service", "name": "Prosjektstøtte" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Lederstøtte per time",
+        "price": "895",
+        "priceCurrency": "NOK",
+        "unitCode": "HUR",
+        "itemOffered": { "@type": "Service", "name": "Lederstøtte" }
+      },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brev, skjemaer og offentlig kontakt" } }
     ]
   }
 }
@@ -142,7 +164,7 @@
   <nav class="site-nav" id="siteNav" aria-label="Hovedmeny">
     <a href="#tjenester">Tjenester</a>
     <a href="#offentlig">Brev og skjemaer</a>
-    <a href="#fastdag">Priser</a>
+    <a href="#slik">Priser</a>
     <a href="#om">Om meg</a>
     <a href="#kontakt" class="nav-cta">Kontakt</a>
   </nav>
@@ -384,157 +406,166 @@
     </div>
   </section>
 
-  <!-- ======== 03 FAST KONTORKLAR-DAG ========
-       Signaturtjenesten. Kalenderbladet ringer rundt dagen du setter av,
-       med nøyaktig samme håndtegnede form som fristen i brevet over –
-       der ringes en frist du har fått, her dagen du bruker på å rekke den. -->
-  <section id="fastdag" class="doc fastdag">
+  <!-- ======== 03 SLIK JOBBER VI ========
+       Fem tilbud i én seksjon. Fast KontorKlar-dag ligger øverst som
+       fremhevet panel – det er signaturtjenesten, og skal ha mest vekt.
+       Kalenderbladet ringer rundt dagen med samme håndtegnede form som
+       fristen i brevet i seksjon 02. -->
+  <section id="slik" class="doc doc--alt">
     <div class="doc__inner">
       <div class="doc__rail">
         <span class="doc__num">03</span>
-        <p class="doc__label">Fast KontorKlar-dag</p>
-      </div>
-
-      <div class="doc__body">
-        <div class="fastdag__grid">
-
-          <div class="kal reveal" aria-hidden="true">
-            <p class="kal__hode">Oktober</p>
-            <div class="kal__uke">
-              <span>ma</span><span>ti</span><span>on</span><span>to</span><span>fr</span>
-            </div>
-            <div class="kal__rutenett">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span>1</span>
-            <span>2</span>
-            <span>5</span>
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>12</span>
-            <span>13</span>
-            <span>14</span>
-            <span class="kal__dag">15</span>
-            <span>16</span>
-            <span>19</span>
-            <span>20</span>
-            <span>21</span>
-            <span>22</span>
-            <span>23</span>
-            <span>26</span>
-            <span>27</span>
-            <span>28</span>
-            <span>29</span>
-            <span>30</span>
-            </div>
-          </div>
-
-          <div class="fastdag__tekst reveal">
-            <h2>Kontorjobben har en tendens til å hope seg opp?</h2>
-            <p>
-              Sett av en fast KontorKlar-dag – for eksempel én dag i måneden –
-              så sørger jeg for at det blir tatt tak i.
-            </p>
-            <p>
-              E-post som venter, tilbud som skal sendes, fakturagrunnlag som må
-              gjøres klart, dokumenter, skjemaer, kundesvar, bestillinger og
-              oppfølging.
-            </p>
-            <p class="fastdag__slagord">Du gjør jobben. Jeg tar kontorjobben.</p>
-
-            <div class="fastdag__pris">
-              <p class="fastdag__tall">5 500 kr<span>/mnd</span></p>
-              <p class="fastdag__vilkaar">
-                Inntil 7 timer, én fast dag per måned.
-              </p>
-              <p class="fastdag__sted">
-                Kan gjennomføres digitalt eller hos kunden etter avtale.
-              </p>
-              <a class="btn btn--primary" href="#kontakt">Book en uforpliktende prat</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== 04 PRISER ======== -->
-  <section id="priser" class="doc doc--alt">
-    <div class="doc__inner">
-      <div class="doc__rail">
-        <span class="doc__num">04</span>
-        <p class="doc__label">Priser</p>
+        <p class="doc__label">Slik jobber vi</p>
       </div>
 
       <div class="doc__body">
         <div class="doc__head reveal">
-          <h2>Pakkeløsninger</h2>
+          <h2>Du kjøper akkurat så mye hjelp du trenger</h2>
           <p>
-            Fleksibel hjelp tilpasset behovet ditt. Tre måter å gjøre det på –
-            vi finner ut sammen hva som passer deg.
+            Trenger du hjelp én time, noen timer i måneden eller en fast
+            kontordag? Du velger det som passer – uten å ansette noen og uten å
+            kjøpe mer hjelp enn du faktisk trenger.
           </p>
         </div>
 
-        <div class="modeller reveal">
-          <div class="modell">
-            <p class="modell__merke">KontorKlar Mini</p>
-            <p class="modell__pris">4 000 kr</p>
-            <p class="modell__timer">5 timer</p>
+        <article class="utvalgt reveal">
+            <div class="kal" aria-hidden="true">
+              <p class="kal__hode">Oktober</p>
+              <div class="kal__uke">
+                <span>ma</span><span>ti</span><span>on</span><span>to</span><span>fr</span>
+              </div>
+              <div class="kal__rutenett">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>1</span>
+              <span>2</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>12</span>
+              <span>13</span>
+              <span>14</span>
+              <span class="kal__dag">15</span>
+              <span>16</span>
+              <span>19</span>
+              <span>20</span>
+              <span>21</span>
+              <span>22</span>
+              <span>23</span>
+              <span>26</span>
+              <span>27</span>
+              <span>28</span>
+              <span>29</span>
+              <span>30</span>
+              </div>
+            </div>
+          <div class="utvalgt__tekst">
+            <p class="utvalgt__merke">Fast KontorKlar-dag</p>
+            <h3>Én dag – 5 500 kr</h3>
             <p>
-              For deg som trenger litt hjelp til å få unna det som har hopet seg
-              opp. Ingen binding.
+              Sett av én dag til alt kontorarbeidet som ellers blir liggende.
+              Jeg tar tak i e-post, tilbud, dokumenter, bilag, kundeoppfølging
+              og andre administrative oppgaver dere avtaler.
             </p>
+            <p class="utvalgt__vilkaar">Inntil 7 timer.</p>
+            <p class="utvalgt__slagord">Du gjør jobben. Jeg tar kontorjobben.</p>
+            <a class="btn btn--primary" href="#kontakt">Book en uforpliktende prat</a>
           </div>
+        </article>
 
-          <div class="modell">
-            <p class="modell__merke">KontorKlar Fast 10</p>
-            <p class="modell__pris">8 000 kr<span>/mnd</span></p>
-            <p class="modell__timer">10 timer per måned</p>
-            <p>Fast kontorhjelp hver måned.</p>
-          </div>
+        <div class="tilbud">
 
-          <div class="modell">
-            <p class="modell__merke">KontorKlar Fast 20</p>
-            <p class="modell__pris">16 000 kr<span>/mnd</span></p>
-            <p class="modell__timer">20 timer per måned</p>
-            <p>For bedrifter som trenger jevnlig administrativ støtte.</p>
-          </div>
+          <article class="tilbud__kort reveal">
+            <p class="tilbud__merke">Enkelttimer</p>
+            <h3>Hjelp når du trenger det</h3>
+            <p>
+              Har papirarbeidet hopet seg opp, eller har det dukket opp noe du
+              ikke rekker selv? Bestill én eller flere timer – helt uten binding.
+            </p>
+            <div class="prisrad">
+              <div><span>Kontorhjelp</span><strong>795 kr/time</strong></div>
+              <div><span>Prosjektstøtte</span><strong>895 kr/time</strong></div>
+              <div><span>Lederstøtte</span><strong>895 kr/time</strong></div>
+            </div>
+            <p class="tilbud__note">
+              Minimum én time. Deretter faktureres per påbegynte 15 minutter.
+            </p>
+            <p class="tilbud__note">
+              For enkeltoppdrag får du en kort oppdragsbekreftelse på e-post med
+              pris og hva vi har avtalt. Du svarer «Godkjent», så setter jeg i gang.
+            </p>
+          </article>
+
+          <article class="tilbud__kort reveal">
+            <p class="tilbud__merke">KontorKlar Mini</p>
+            <h3>5 timer – 3 750 kr</h3>
+            <p>
+              For deg som har en liten bunke som skal ryddes unna, trenger hjelp
+              med et konkret oppdrag eller vil prøve KontorKlar før du inngår en
+              fast avtale.
+            </p>
+            <p class="tilbud__note">Ingen binding.</p>
+          </article>
+
+          <article class="tilbud__kort reveal">
+            <p class="tilbud__merke">Fast KontorKlar</p>
+            <h3>Fast hjelp hver måned</h3>
+            <div class="prisrad">
+              <div><span>10 timer</span><strong>7 500 kr/mnd.</strong></div>
+              <div><span>20 timer</span><strong>14 500 kr/mnd.</strong></div>
+            </div>
+            <p>
+              For bedrifter som har et jevnt behov for administrativ hjelp, men
+              ikke behov for – eller ønske om – å ansette noen.
+            </p>
+            <p class="tilbud__note">
+              Du får reservert kapasitet hver måned og vet hva hjelpen koster.
+            </p>
+          </article>
+
+          <article class="tilbud__kort reveal">
+            <p class="tilbud__merke">Prosjekt eller periode</p>
+            <h3>Ekstra kapasitet når dere trenger det</h3>
+            <p>
+              Et prosjekt som skal i havn, en travel periode, permisjon eller
+              rett og slett for lite kapasitet? Jeg kan gå inn i en avtalt
+              periode og bidra med administrativ støtte, prosjektstøtte eller
+              lederstøtte.
+            </p>
+            <div class="prisrad">
+              <div><span>Timepris</span><strong>fra 895 kr/time</strong></div>
+            </div>
+            <p class="tilbud__note">
+              For større eller mer omfattende oppdrag avtaler vi omfang og pris
+              på forhånd.
+            </p>
+          </article>
+
         </div>
 
-        <!-- Skreddersydde tjenester ligger bevisst dempet under pakkene -->
-        <div class="ovrige reveal">
-          <p class="ovrige__hode">Øvrige priser</p>
-          <dl>
-            <div>
-              <dt>Ordinær kontorhjelp og administrativ støtte</dt>
-              <dd>850 kr/time</dd>
-            </div>
-            <div>
-              <dt>Prosjektstøtte</dt>
-              <dd>fra 900 kr/time</dd>
-            </div>
-            <div>
-              <dt>Lederstøtte</dt>
-              <dd>fra 950 kr/time</dd>
-            </div>
-          </dl>
-          <p class="ovrige__note">
-            Ved større eller mer omfattende behov avtales pris individuelt.
-          </p>
-        </div>
+        <p class="slik__punkt reveal">
+          Ingen ansettelse. Ingen unødvendig binding. Bare den hjelpen du
+          faktisk trenger.
+        </p>
+
+        <p class="mva reveal">
+          <strong>Om merverdiavgift:</strong> KontorKlar er foreløpig ikke
+          registrert i Merverdiavgiftsregisteret, og det beregnes derfor ikke
+          merverdiavgift. Ved registrering kommer merverdiavgift i tillegg etter
+          gjeldende sats.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ======== 05 HVEM ======== -->
+  <!-- ======== 04 HVEM ======== -->
   <section id="hvem" class="doc doc--linje">
     <div class="doc__inner">
       <div class="doc__rail">
-        <span class="doc__num">05</span>
+        <span class="doc__num">04</span>
         <p class="doc__label">Hvem jeg jobber for</p>
       </div>
 
@@ -552,11 +583,11 @@
     </div>
   </section>
 
-  <!-- ======== 06 OM TRUDE ======== -->
+  <!-- ======== 05 OM TRUDE ======== -->
   <section id="om" class="doc doc--linje">
     <div class="doc__inner">
       <div class="doc__rail">
-        <span class="doc__num">06</span>
+        <span class="doc__num">05</span>
         <p class="doc__label">Om KontorKlar</p>
       </div>
 
@@ -597,11 +628,11 @@
     </div>
   </section>
 
-  <!-- ======== 07 KONTAKT ======== -->
+  <!-- ======== 06 KONTAKT ======== -->
   <section id="kontakt" class="doc doc--alt">
     <div class="doc__inner">
       <div class="doc__rail">
-        <span class="doc__num">07</span>
+        <span class="doc__num">06</span>
         <p class="doc__label">Kontakt</p>
       </div>
 
@@ -729,6 +760,6 @@
   <p class="footer__credit">Nettside laget av <a href="https://aaserudweb.no" target="_blank" rel="noopener">AaserudWeb</a></p>
 </footer>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>

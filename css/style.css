@@ -550,51 +550,6 @@ ul { list-style: none; }
 .notat__slutt p { color: var(--dark-soft); font-size: 0.95rem; }
 .notat__slutt .btn { margin-top: 20px; }
 
-/* ======== KJØPSMODELLER ========
-   Tre spalter skilt av loddrette hårlinjer – leser som et
-   vilkårsoppsett, ikke som tre kort. */
-
-.modeller {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--rule);
-}
-.modell {
-  padding: 30px clamp(16px, 2.4vw, 30px) 8px;
-  border-left: 1px solid var(--rule);
-}
-.modell:first-child { border-left: 0; padding-left: 0; }
-
-.modell__merke {
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--green-strong);
-  margin-bottom: 12px;
-}
-.modell h3 { margin-bottom: 12px; }
-.modell p { font-size: 0.95rem; }
-.modell__note {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px dotted var(--rule);
-  font-size: 0.87rem;
-  color: var(--ink-faint);
-}
-
-.modeller__foot {
-  margin-top: 34px;
-  padding-top: 26px;
-  border-top: 1px solid var(--rule);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-  justify-content: space-between;
-}
-.modeller__foot p { max-width: 34em; }
-
 /* ======== MÅLGRUPPER ========
    Ni termer som én løpende linje. Kompakt og selvsikkert –
    ni ruter ville bare vært mer av det samme. */
@@ -802,100 +757,98 @@ ul { list-style: none; }
 .footer__credit { font-size: 0.84rem; margin-top: 10px; }
 .footer__credit a { color: #fff; text-decoration: underline; }
 
-/* ======== FAST KONTORKLAR-DAG ========
-   Signaturtjenesten. Grønn bunn er en flate som ikke er brukt ellers,
-   så seksjonen skiller seg ut uten å konkurrere med det mørke brevet. */
+/* ======== SLIK JOBBER VI ========
+   Fem tilbud. Fast KontorKlar-dag er signaturtjenesten og ligger som et
+   fremhevet panel øverst; de fire andre står i et rolig rutenett under. */
 
-.fastdag { background: var(--green-wash); }
-.fastdag .doc__rail { border-top-color: var(--green-strong); }
-.fastdag .doc__label { color: var(--green-dark); }
-.fastdag .doc__num { color: var(--green-strong); }
+/* --- Det fremhevede panelet --- */
 
-.fastdag__grid {
+.utvalgt {
+  background: var(--green-wash);
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  padding: clamp(24px, 3.2vw, 42px);
+  margin-bottom: clamp(30px, 4vw, 48px);
   display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
-  gap: clamp(28px, 4vw, 60px);
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: clamp(24px, 4vw, 50px);
   align-items: center;
 }
 
-.fastdag__tekst h2 { margin-bottom: 18px; }
-.fastdag__tekst p { color: var(--ink-soft); }
-.fastdag__tekst p + p { margin-top: 14px; }
-
-.fastdag__slagord {
+.utvalgt__merke {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-strong) !important;
+  margin-bottom: 10px;
+}
+.utvalgt h3 {
+  font-size: clamp(1.5rem, 3vw, 2.05rem);
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.utvalgt p { color: var(--ink-soft); }
+.utvalgt__vilkaar {
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--ink) !important;
+}
+.utvalgt__slagord {
   font-family: var(--font-head);
-  font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
   color: var(--ink) !important;
   margin-top: 20px;
-}
-
-.fastdag__pris {
-  margin-top: 26px;
-  padding-top: 24px;
+  padding-top: 18px;
   border-top: 1px solid var(--green);
 }
-.fastdag__tall {
-  font-family: var(--font-head);
-  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
-  line-height: 1;
-  color: var(--ink) !important;
-}
-.fastdag__tall span {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-}
-.fastdag__vilkaar { margin-top: 10px; font-size: 0.97rem; }
-.fastdag__sted { margin-top: 4px; font-size: 0.9rem; color: var(--ink-faint) !important; }
-.fastdag__pris .btn { margin-top: 24px; }
+.utvalgt .btn { margin-top: 22px; }
 
-/* Kalenderbladet – samme papirspråk som arkene i hero-en */
+/* --- Kalenderbladet. Samme papirspråk som arkene i hero-en. --- */
+
 .kal {
   background: #fff;
   border: 1px solid #d3d6cd;
   border-radius: 3px;
-  padding: clamp(18px, 2.2vw, 26px);
-  box-shadow: 0 10px 30px rgba(26, 51, 69, 0.10);
-  transform: rotate(-1deg);
-  max-width: 320px;
+  padding: clamp(16px, 2vw, 24px);
+  box-shadow: 0 10px 30px rgba(26, 51, 69, 0.12);
+  transform: rotate(-1.5deg);
 }
 .kal__hode {
   font-family: var(--font-head);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--ink) !important;
   text-align: center;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
+  padding-bottom: 11px;
+  margin-bottom: 11px;
   border-bottom: 1px solid var(--rule);
 }
 .kal__uke,
 .kal__rutenett {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 4px;
+  gap: 3px;
   text-align: center;
 }
 .kal__uke {
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 .kal__rutenett {
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   color: var(--ink-soft);
-  row-gap: 7px;
+  row-gap: 6px;
 }
 .kal__rutenett span {
   display: grid;
   place-items: center;
   aspect-ratio: 1;
 }
-
-/* Dagen som er satt av. Samme håndtegnede ring som fristen i brevet. */
+/* Dagen som settes av – samme håndtegnede ring som fristen i brevet */
 .kal__dag {
   color: var(--ink);
   font-weight: 600;
@@ -903,61 +856,77 @@ ul { list-style: none; }
   border-radius: 46% 54% 50% 50% / 56% 44% 56% 44%;
 }
 
-/* ======== PRISER ======== */
+/* --- De fire øvrige tilbudene --- */
 
-.modell__pris {
-  font-family: var(--font-head);
-  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
-  line-height: 1;
-  color: var(--ink) !important;
-  margin-bottom: 6px;
+.tilbud {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--rule);
 }
-.modell__pris span {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--ink-soft);
+.tilbud__kort {
+  padding: clamp(22px, 2.8vw, 32px) clamp(18px, 2.4vw, 32px);
+  border-bottom: 1px solid var(--rule);
 }
-.modell__timer {
-  font-size: 0.88rem;
-  color: var(--ink-faint) !important;
-  padding-bottom: 14px;
-  margin-bottom: 14px;
-  border-bottom: 1px dotted var(--rule);
+/* Venstre spalte får en loddrett skillelinje og ingen venstremarg */
+.tilbud__kort:nth-child(2n+1) {
+  border-right: 1px solid var(--rule);
+  padding-left: 0;
 }
+.tilbud__kort:nth-child(2n) { padding-right: 0; }
 
-/* Skreddersydde tjenester – bevisst dempet under pakkene */
-.ovrige { margin-top: clamp(34px, 4vw, 52px); }
-.ovrige__hode {
-  font-size: 0.76rem;
+.tilbud__merke {
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-faint) !important;
-  margin-bottom: 4px;
+  color: var(--green-strong) !important;
+  margin-bottom: 10px;
 }
-.ovrige dl { display: grid; }
-.ovrige dl > div {
+.tilbud__kort h3 { color: var(--ink); margin-bottom: 12px; }
+.tilbud__kort p { font-size: 0.95rem; }
+.tilbud__note {
+  margin-top: 12px;
+  font-size: 0.87rem;
+  color: var(--ink-faint) !important;
+}
+
+/* Prislinjer inne i kortene: navn til venstre, pris til høyre */
+.prisrad { margin: 16px 0; }
+.prisrad div {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 20px;
-  padding: 13px 0;
-  border-top: 1px solid var(--rule);
+  gap: 16px;
+  padding: 9px 0;
+  border-top: 1px dotted var(--rule);
+  font-size: 0.95rem;
 }
-.ovrige dl > div:last-child { border-bottom: 1px solid var(--rule); }
-.ovrige dt { font-size: 0.97rem; color: var(--ink-soft); }
-.ovrige dd {
-  font-size: 0.97rem;
+.prisrad div:last-child { border-bottom: 1px dotted var(--rule); }
+.prisrad span { color: var(--ink-soft); }
+.prisrad strong {
   font-weight: 600;
   color: var(--ink);
   white-space: nowrap;
 }
-.ovrige__note {
-  margin-top: 16px;
-  font-size: 0.88rem;
+
+/* --- Avsluttende linjer --- */
+
+.slik__punkt {
+  margin-top: clamp(26px, 3vw, 38px);
+  font-family: var(--font-head);
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+  color: var(--ink) !important;
+}
+.mva {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  max-width: 62em;
+  font-size: 0.86rem;
+  line-height: 1.6;
   color: var(--ink-faint) !important;
 }
+.mva strong { color: var(--ink-soft); }
 
 /* ======== SOSIALE PROFILER I FOOTEREN ======== */
 
@@ -1096,19 +1065,17 @@ ul { list-style: none; }
   .hero__inner { padding-bottom: 0; }
 
   .brev { grid-template-columns: 1fr; }
-  .fastdag__grid { grid-template-columns: 1fr; }
-  .kal { max-width: 280px; margin: 0 auto; }
+  .utvalgt { grid-template-columns: 1fr; }
+  .kal { max-width: 300px; margin: 0 auto; }
+  .tilbud { grid-template-columns: 1fr; }
+  .tilbud__kort {
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
   .om { grid-template-columns: 1fr; }
   .om__figur { max-width: 320px; }
   .kontakt { grid-template-columns: 1fr; }
-
-  .modeller { grid-template-columns: 1fr; }
-  .modell {
-    border-left: 0;
-    border-top: 1px solid var(--rule);
-    padding: 24px 0 8px;
-  }
-  .modell:first-child { border-top: 0; }
 
   .post { grid-template-columns: 1fr; gap: 10px; }
 }
@@ -1138,7 +1105,6 @@ ul { list-style: none; }
   .logo__img { height: 38px; }
   .form-row--split { grid-template-columns: 1fr; }
   .btn-row .btn { flex: 1 1 100%; }
-  .modeller__foot .btn { flex: 1 1 100%; }
 }
 
 /* ======== REDUSERT BEVEGELSE ======== */
