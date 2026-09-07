@@ -210,6 +210,11 @@ pris, må alle tre oppdateres.
 | Prosjektstøtte | fra 900 kr/time | |
 | Lederstøtte | fra 950 kr/time | |
 
-Alle priser er **eks. mva.**, som er riktig når kunden er en bedrift. Skulle
-KontorKlar senere selge til privatpersoner, krever prisopplysningsforskriften
-at prisen oppgis inkludert mva.
+Prisene står **uten noen mva-opplysning**. Trude er ikke mva-registrert ennå,
+og da er «eks. mva» direkte misvisende – det finnes ingen mva å legge til, og
+prisen på siden er den kunden faktisk betaler.
+
+**Dette må endres når hun passerer 50 000 kr i omsetning på tolv måneder.** Da
+inntrer registreringsplikt, og prisene må enten oppgis som «eks. mva» eller
+settes opp 25 %. Med 5 500 kr i måneden fra én fast kunde er terskelen passert
+i løpet av det første året, så regn med at dette kommer tilbake.
