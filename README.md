@@ -34,14 +34,13 @@ venstremarg som blir stående mens innholdet ruller forbi.
 |---|---|---|
 | 01 | `#tjenester` | Fire oppføringer i et register, skilt av hårfine linjer |
 | 02 | `#offentlig` | Brevet fra kommunen, med fire notater i margen |
-| 03 | `#fastdag` | Fast KontorKlar-dag – signaturtjenesten, med kalenderblad |
-| 04 | `#priser` | Tre pakker, og øvrige priser dempet under |
-| 05 | `#hvem` | Målgruppene som én løpende linje |
-| 06 | `#om` | Trude Øiesvold, erfaring og verdier |
-| 07 | `#kontakt` | Kontaktskjema og kontaktopplysninger |
+| 03 | `#slik` | Fem tilbud. Fast KontorKlar-dag fremhevet øverst |
+| 04 | `#hvem` | Målgruppene som én løpende linje |
+| 05 | `#om` | Trude Øiesvold, erfaring og verdier |
+| 06 | `#kontakt` | Kontaktskjema og kontaktopplysninger |
 
-Navlenken «Priser» peker på `#fastdag`, ikke `#priser`. Det er med vilje –
-signaturtjenesten skal treffes først.
+Navlenken heter «Priser», men peker på `#slik`. Folk leter etter ordet
+«priser»; seksjonen heter «Slik jobber vi» fordi den handler om mer enn tall.
 
 ### Hva som er KontorKlars eget
 
@@ -51,7 +50,7 @@ denne sidas eget er:
 
 - **Dokumentlayouten.** Nummerert venstremarg, hårfine linjer, ingen kort
   med skygge. Gir siden et arkiv-preg som passer en administrativ tjeneste.
-- **Kalenderbladet i seksjon 03.** Dagen som settes av er ringet rundt med
+- **Kalenderbladet i det fremhevede panelet.** Dagen som settes av er ringet rundt med
   nøyaktig samme håndtegnede form som fristen i brevet over (`.brev__frist` og
   `.kal__dag` deler `border-radius`). Seksjon 02 ringer rundt en frist du har
   fått, 03 rundt dagen du bruker på å rekke den. Kalenderen viser ekte
@@ -222,25 +221,38 @@ Verdt å vite hvis noe skulle svikte:
 
 ## Priser
 
-Prisene ligger tre steder som må holdes i takt: seksjon `#fastdag`, seksjon
-`#priser`, og `hasOfferCatalog` i JSON-LD-en øverst i `index.html`. Endres en
-pris, må alle tre oppdateres.
+Prisene ligger to steder som må holdes i takt: seksjon `#slik` i `index.html`,
+og `hasOfferCatalog` i JSON-LD-en øverst i samme fil. Endres en pris, må begge
+oppdateres.
 
 | | Pris | Omfang |
 |---|---|---|
-| Fast KontorKlar-dag | 5 500 kr/mnd | Inntil 7 timer, én fast dag |
-| KontorKlar Mini | 4 000 kr | 5 timer, ingen binding |
-| KontorKlar Fast 10 | 8 000 kr/mnd | 10 timer per måned |
-| KontorKlar Fast 20 | 16 000 kr/mnd | 20 timer per måned |
-| Kontorhjelp / adm. støtte | 850 kr/time | |
-| Prosjektstøtte | fra 900 kr/time | |
-| Lederstøtte | fra 950 kr/time | |
+| **Fast KontorKlar-dag** | 5 500 kr | Inntil 7 timer, én dag |
+| KontorKlar Mini | 3 750 kr | 5 timer, ingen binding |
+| Fast KontorKlar 10 | 7 500 kr/mnd. | 10 timer per måned |
+| Fast KontorKlar 20 | 14 500 kr/mnd. | 20 timer per måned |
+| Kontorhjelp | 795 kr/time | Min. én time, så per påbegynte 15 min |
+| Prosjektstøtte | 895 kr/time | |
+| Lederstøtte | 895 kr/time | |
+| Prosjekt eller periode | fra 895 kr/time | |
 
-Prisene står **uten noen mva-opplysning**. Trude er ikke mva-registrert ennå,
-og da er «eks. mva» direkte misvisende – det finnes ingen mva å legge til, og
-prisen på siden er den kunden faktisk betaler.
+Fast KontorKlar-dag er signaturtjenesten. Den ligger derfor som et fremhevet
+panel øverst i seksjonen – grønn flate, kalenderblad, egen knapp – mens de
+fire andre står i et rolig rutenett under. Hierarkiet er bevisst og bestilt av
+Trude; ikke jevn det ut.
 
-**Dette må endres når hun passerer 50 000 kr i omsetning på tolv måneder.** Da
-inntrer registreringsplikt, og prisene må enten oppgis som «eks. mva» eller
-settes opp 25 %. Med 5 500 kr i måneden fra én fast kunde er terskelen passert
-i løpet av det første året, så regn med at dette kommer tilbake.
+I e-posten hennes står Fast KontorKlar-dag som nummer tre i rekken. Den er
+flyttet først fordi et stort panel klemt mellom små kort bryter rutenettet.
+Rekkefølgen på de fire andre er hennes.
+
+### Merverdiavgift
+
+KontorKlar er ikke registrert i Merverdiavgiftsregisteret, og en egen note
+nederst i seksjonen forklarer det. Et bart «eks. mva» ville vært misvisende –
+det antyder at noe kommer i tillegg.
+
+**Dette må endres ved registreringsplikt**, som inntrer ved 50 000 kr omsetning
+på tolv måneder. Én fast KontorKlar-dag i måneden er 66 000 kr i året, så
+terskelen passeres sannsynligvis det første året. Da må noten skrives om og
+prisene enten merkes «eks. mva» eller settes opp.
+
