@@ -162,8 +162,33 @@ Google Fonts. Byttes de ut, må `<link>`-taggen endres i alle tre HTML-filene.
 PHP 8 er med på alle deres pakker, og serverne står i Oslo. Kontrollpanelet er
 cPanel, så det er FTP eller filbehandleren der.
 
-Last opp innholdet i mappa til webroten. `send.php` må med – uten den virker
-ikke skjemaet.
+Last opp innholdet i mappa til `public_html`. `send.php` må med – uten den
+virker ikke skjemaet.
+
+### Ikke last opp disse
+
+De hører til utviklingen, ikke til nettstedet, og blir liggende offentlig
+lesbare hvis de følger med:
+
+| | Hvorfor |
+|---|---|
+| `README.md` | Denne fila. Interne notater om pris, kunde og begrunnelser |
+| `.gitignore` | Ingen nytte på en webserver |
+| `verktoy/` | Byggeskript, ikke en del av nettstedet |
+| `.git/` | Hele historikken. Domene.no svarer 403 på den, men last den likevel ikke opp |
+
+### Tving HTTPS
+
+**Dette må gjøres, ikke bare bør.** Uten omdirigering serveres siden også på
+`http://`, og fordi skjemaets `action` er relativ (`send.php`), sendes navn,
+e-post, telefon og melding da i klartekst. Personvernerklæringen punkt 9 lover
+uttrykkelig kryptert forbindelse, så uten dette stemmer den ikke.
+
+Enkleste vei er bryteren i cPanel: **Domener → Force HTTPS Redirect**. Den
+skriver regelen selv, uten at du rører `.htaccess` – webhotellet har allerede
+en der som styrer PHP, og den vil du ikke overskrive.
+
+Sjekk etterpå at `http://kontorklar.no` svarer 301 til `https://`.
 
 **Viktig:** endres `css/style.css` eller `js/main.js`, må de lastes opp sammen med
 HTML-filene. Lastes bare HTML-en opp, virker den nye siden halvveis.
