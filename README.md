@@ -81,10 +81,6 @@ gjort: opplysningene forlater ikke Norge, og det finnes ingen databehandler
 
 Dette gjenstår:
 
-- [ ] **Opprett `nettside@kontorklar.no`** hos domene.no, som postkasse eller
-      alias videre til Trude. Skriptet sender fra denne adressen. Ligger
-      avsenderadressen på et annet domene enn nettstedet, havner e-posten lett
-      i søppelpost (SPF og DMARC).
 - [ ] **Test skjemaet etter opplasting.** PHP kjører ikke på GitHub Pages, så
       det kan først testes når filene ligger hos domene.no. Send en ekte
       henvendelse og bekreft at den kommer fram, at du havner på `takk.html`,
@@ -233,8 +229,13 @@ Verdt å vite hvis noe skulle svikte:
 - Skriptet svarer alltid med en omdirigering – til `takk.html` hvis det gikk
   bra, ellers tilbake til `index.html#kontakt`. Det viser aldri en feilmelding
   til den besøkende.
-- Kommer ingenting fram, er den vanligste årsaken at `nettside@kontorklar.no`
-  ikke finnes, eller at `mail()` er slått av. Sjekk feilloggen i cPanel.
+- Skriptet sender fra `trude@kontorklar.no`, altså samme adresse som det
+  sender til. Det fungerer, men noen spamfiltre gir et lite utslag på det
+  mønsteret. Havner henvendelsene i søppelpost, opprett
+  `nettside@kontorklar.no` som alias videre til Trude og bytt `AVSENDER`
+  øverst i `send.php`.
+- Kommer ingenting fram i det hele tatt, er `mail()` sannsynligvis slått av.
+  Sjekk feilloggen i cPanel.
 - Er `mail()` upålitelig hos domene.no, er neste steg å sende via SMTP
   (`smtp.domene.no`) med PHPMailer i stedet. Da trengs et passord, som ikke
   skal ligge i git – legg det i en fil utenfor webroten.

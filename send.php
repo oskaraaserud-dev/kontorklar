@@ -19,10 +19,15 @@ declare(strict_types=1);
 // ---- Innstillinger ----------------------------------------------------
 
 const MOTTAKER   = 'trude@kontorklar.no';
-// Avsenderadressen bør ligge på samme domene som nettstedet, ellers
-// blir e-posten lett stoppet av spamfilter (SPF/DMARC). Opprett
-// nettside@kontorklar.no som postkasse eller alias hos domene.no.
-const AVSENDER   = 'nettside@kontorklar.no';
+// Avsenderadressen må ligge på samme domene som nettstedet, ellers blir
+// e-posten lett stoppet av spamfilter (SPF og DMARC).
+//
+// Her er avsender og mottaker samme adresse. Det fungerer, men enkelte
+// spamfiltre gir et lite utslag på det mønsteret, fordi forfalsket post
+// ofte ser slik ut. Havner henvendelsene i søppelpost, er det første
+// tiltaket å opprette nettside@kontorklar.no som alias videre til Trude
+// og sette den inn her – da forsvinner utslaget.
+const AVSENDER   = 'trude@kontorklar.no';
 const AVSENDER_NAVN = 'KontorKlar nettside';
 const EMNE       = 'Ny henvendelse fra kontorklar.no';
 const KVITTERING = 'takk.html';
