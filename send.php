@@ -16,6 +16,11 @@
 
 declare(strict_types=1);
 
+// Uten dette bruker PHP UTC, og tidspunktet i e-posten blir liggende én
+// time bak om vinteren og to om sommeren. Europe/Oslo håndterer
+// sommertid av seg selv, så dette trenger ikke røres to ganger i året.
+date_default_timezone_set('Europe/Oslo');
+
 // ---- Innstillinger ----------------------------------------------------
 
 const MOTTAKER   = 'trude@kontorklar.no';

@@ -34,13 +34,13 @@ venstremarg som blir stående mens innholdet ruller forbi.
 |---|---|---|
 | 01 | `#tjenester` | Fire oppføringer i et register, skilt av hårfine linjer |
 | 02 | `#offentlig` | Brevet fra kommunen, med fire notater i margen |
-| 03 | `#slik` | Fem tilbud. Fast KontorKlar-dag fremhevet øverst |
+| 03 | `#slik` | «Slik jobber jeg» – fem tilbud, Fast KontorKlar-dag fremhevet |
 | 04 | `#hvem` | Målgruppene som én løpende linje |
 | 05 | `#om` | Trude Øiesvold, erfaring og verdier |
 | 06 | `#kontakt` | Kontaktskjema og kontaktopplysninger |
 
 Navlenken heter «Priser», men peker på `#slik`. Folk leter etter ordet
-«priser»; seksjonen heter «Slik jobber vi» fordi den handler om mer enn tall.
+«priser»; seksjonen heter «Slik jobber jeg» fordi den handler om mer enn tall.
 
 ### Hva som er KontorKlars eget
 
@@ -236,6 +236,9 @@ Verdt å vite hvis noe skulle svikte:
   øverst i `send.php`.
 - Kommer ingenting fram i det hele tatt, er `mail()` sannsynligvis slått av.
   Sjekk feilloggen i cPanel.
+- Tidspunktet i e-posten settes av `date_default_timezone_set('Europe/Oslo')`
+  øverst i skriptet. Uten den bruker PHP UTC, og klokka blir liggende én time
+  bak om vinteren og to om sommeren.
 - Er `mail()` upålitelig hos domene.no, er neste steg å sende via SMTP
   (`smtp.domene.no`) med PHPMailer i stedet. Da trengs et passord, som ikke
   skal ligge i git – legg det i en fil utenfor webroten.
